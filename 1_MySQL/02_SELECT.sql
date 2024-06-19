@@ -224,7 +224,7 @@ WHERE phone LIKE '__1%';
 -- ESCAPE OPTION : 나만의 와일드 카드를 만들어서 사용!
 SELECT emp_id, emp_name, email
 FROM employee
-WHERE email LIKE '___\_%' ; -- \
+WHERE email LIKE '__\_%' ; -- \
 
 -- 위의 사원들 이외의 사원들 조회
 -- 논리부정연산자 : NOT
@@ -335,17 +335,25 @@ WHERE bonus IS NULL and salary*12 >= 40000000;
 -- 사번, 사원명,입사일(hire_date), 부서코드 조회(정렬은 먼저 입사한 기준)
 SELECT emp_id,emp_name,hire_date,dept_code
 FROM employee
-WHERE dept_code IS NOT NULL and hire_date > '1995-01-01';
+WHERE dept_code IS NOT NULL and hire_date >= '1995-01-01'
+ORDER BY hire_date;
 
 -- 5. 급여가 200만원 이상 500만원 이하이고 입사일이 '2001-01-01'이상이고
 -- 보너스를 받지 않는 사원들의 사변, 사원명, 급여, 입사일, 보너스 조회
 SELECT emp_id,emp_name,salary,hire_date,bonus
 FROM employee
-WHERE hire_date > '2001-01-01' and bonus IS NULL and salary BETWEEN 2000000 and 5000000;
+WHERE hire_date >= '2001-01-01' and bonus IS NULL and salary BETWEEN 2000000 and 5000000;
 -- 6.보너스 포험 연봉이 NULL이 아니고 이름에 '하'가 포함되어 있는 사원들의
--- 사번, 사원명, 급여, 보너스 포험 연봉(별칭부여) 조회
+-- 사번, 사원명, 급여, 보너스 포험 연봉(별칭부여) 조회 (연봉이 높은순으로 정렬)
 -- 보너스 포험 연봉: (SALARY + SALARY * BONUS)*12
-SELECT *
+
+
+SELECT emp_id,emp_name, salary ,(SALARY + SALARY * BONUS)*12"연봉"
 FROM employee
-WHERE emp_name LIKE "%하%" and (SALARY + SALARY * BONUS IS NULL)*12;
+WHERE emp_name LIKE "%하%" and (SALARY + SALARY * BONUS)*12 IS NOT NULL
+ORDER BY 연봉 DESC;
+
+
+
+
 
