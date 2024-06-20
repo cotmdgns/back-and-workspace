@@ -23,13 +23,14 @@ WHERE price BETWEEN 2 and 4 and category In ('Documentary','Animation') and acto
 
 -- 5. address 테이블에서 district가 비어있지 않고 앞에 숫자 제외 주소만 10개 조회
 SELECT *
-FROM address
-WHERE district is NOT null ;
+FROM address;
 
 -- 6. customer_list 테이블에서 id가 6인 사람부터 10명 조회
 SELECT *
 FROM customer
-limit 10 offset 6;
+WHERE customer_id >= 6
+LIMIT 10;
+
 -- 7. actor 테이블에서 J로 시작하는 이름과 글자수 조회 (공백 X, 정렬은 글자수가 많은 사람 순으로)
 
 

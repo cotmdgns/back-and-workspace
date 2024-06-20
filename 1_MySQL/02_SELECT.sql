@@ -309,7 +309,7 @@ FROM employee
 ORDER BY salary DESC 
 LIMIT 5,10; -- 인덱스 5명부터 10명을 보여준다
 
-SELECT emp_name, salary
+SELECT *
 FROM employee
 ORDER BY salary DESC 
 LIMIT 10 OFFSET 0;
