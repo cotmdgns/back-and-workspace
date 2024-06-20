@@ -289,11 +289,27 @@ SELECT emp_name, job_name, dept_code, dept_title
 FROM department
 JOIN employee ON(dept_id = dept_code)
 JOIN job USING (job_code)
-JOIN location ON(location_id = local_code)
+JOIN location ON(location_id = local_code);
  
 -- 10. 해외영업팀에 근무하는 직원들의 직원명, 부서코드, 부서명 조회
-
+SELECT emp_name, dept_code, dept_title
+FROM department
+JOIN employee ON (dept_code = dept_id)
+JOIN location ON (location_id = local_code)
+JOIN national USING (national_code)
+WHERE dept_title LIKE '해외영업%';
 
 -- 11. 이름에 '형'자가 들어가 있는 직원들의 사번, 직원명, 직급명 조회
+SELECT emp_id, emp_name, job_name
+FROM employee
+JOIN job USING(job_code)
+WHERE emp_name LIKE '_형_';
 
 -- 12. 사번, 사원명, 부서명, 직급명, 지역명, 국가명, 급여등급 조회
+SELECT emp_id, emp_name, dept_code, job_name, local_name, national_code, sal_level
+FROM employee
+JOIN department ON (dept_code = dept_id)
+JOIN job USING (job_code)
+JOIN location ON (location_id = local_code)
+JOIN national USING (national_code)
+JOIN sal_grade ON (min_sal <= salary AND salary <= max_sal);
