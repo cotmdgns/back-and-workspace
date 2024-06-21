@@ -1,0 +1,16 @@
+emp_id 사번		emp_name 사원이름
+
+emp_no 주민등록		dept_code 부서코드
+
+email 이메일		job_code 직급코드
+
+phone 핸드폰		salary 월급
+
+bonus 보너스		manager_id 사수번호
+
+hire_date 입사일
+
+ent_date 퇴사날짜
+
+ent_yn 퇴사 유무
+
