@@ -3,7 +3,6 @@ DROP TABLE member;
 DROP TABLE book;
 DROP TABLE publisher;
 
-
 -- 실습 문제
 -- 도서관리 프로그램을 만들기 위한 테이블 만들기
 
@@ -57,6 +56,7 @@ INSERT INTO book (bk_no,bk_title,bk_author,bk_price,bk_pub_no)
 INSERT INTO book (bk_no,bk_title,bk_author,bk_price,bk_pub_no) 
 	VALUES('5','그로스 해킹','라이언 홀리데이','13800','3');
 
+ALTER TABLE book RENAME COLUMN bk_pub_no TO pub_no;
 
 
 -- 3. 회원에 대한 데이터를 담기 위한 회원 테이블 (member)
@@ -77,10 +77,9 @@ CREATE TABLE member(
     gender VARCHAR(3) CHECK(gender IN ('M','F')) NOT NULL,
     address VARCHAR(30),
     phone VARCHAR(30),
-    status VARCHAR(3) CHECK(status IN ('N','Y')) NOT NULL,
+    status VARCHAR(3) CHECK(status IN ('N','Y')) NOT NULL DEFAULT 'N',
     enroll_date VARCHAR(30)
 );
-ALTER TABLE member MODIFY status VARCHAR(3) DEFAULT 'N';
 INSERT INTO member (member_no, member_id, member_pwd, member_name, gender, address, phone, status,enroll_date)
 VALUES('1','user01','pass01','가나다','M','서울시 감낭구','010-1111-2222','N','2024-06-24');
 INSERT INTO member (member_no, member_id, member_pwd, member_name, gender, address, phone, status,enroll_date)
@@ -111,11 +110,37 @@ CREATE TABLE rent(
 );
 SELECT * FROM rent;
 
+INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
+VALUES ('1','1','2',now());
+INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
+VALUES ('2','1','3',now());
+INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
+VALUES ('3','2','1',now());
+INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
+VALUES ('4','2','2',now());
+INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
+VALUES ('5','1','5',now());
 
+ALTER TABLE rent RENAME COLUMN rent_mem_no TO member_no;
+ALTER TABLE rent RENAME COLUMN rent_book_no TO bk_no;
 
 -- 5. 2번 도서를 대여한 회원의 이름, 아이디, 대여일, 반납 예정일(대여일 + 7일)을 조회하시오.
+SELECT * FROM book;   		-- bk_no	pub_no
+SELECT * FROM member; 		-- 					member_no
+SELECT * FROM rent;			-- bk_no			member_no  rent_no
+SELECT * FROM publisher;	-- 			pub_no
 
-
-
-
+SELECT member_name, member_id, rent_date,substr(adddate(now(), interval 7 day),1,10) "반납 예정일"
+FROM book
+JOIN rent USING (bk_no)
+JOIN member USING (member_no)
+JOIN publisher USING (pub_no)
+WHERE bk_no = '2';
 -- 6. 회원번호가 1번인 회원이 대여한 도서들의 도서명, 출판사명, 대여일, 반납예정일을 조회하시오.
+SELECT bk_title,pub_name,rent_date, substr(adddate(now(), interval 7 day),1,10) "반납 예정일"
+FROM book
+JOIN rent USING (bk_no)
+JOIN member USING (member_no)
+JOIN publisher USING (pub_no)
+WHERE member_no = '1';
+
