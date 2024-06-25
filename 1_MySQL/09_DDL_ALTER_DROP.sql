@@ -96,6 +96,8 @@ DROP TABLE dept_copy;
 
 CREATE TABLE dept_copy
 SELECT * FROM kh.department;
+SELECT * FROM dept_copy;
+DESC dept_copy;
 
 -- dept_copy 테이블의 dept_id 컬럼에 기본키(PK, Primary Key) 제약조건 추가
 ALTER TABLE dept_copy ADD PRIMARY KEY(dept_id);

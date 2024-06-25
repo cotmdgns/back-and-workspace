@@ -104,9 +104,7 @@ CREATE TABLE rent(
 	rent_no int PRIMARY KEY,
     rent_mem_no int,
     rent_book_no int,
-    rent_date DATE,
-    FOREIGN KEY (rent_mem_no) REFERENCES member(member_no) ON DELETE SET NULL,
-    FOREIGN KEY (rent_book_no) REFERENCES book(bk_no) ON DELETE SET NULL
+    rent_date DATE
 );
 SELECT * FROM rent;
 
@@ -121,6 +119,8 @@ VALUES ('4','2','2',now());
 INSERT INTO rent(rent_no, rent_mem_no, rent_book_no, rent_date) 
 VALUES ('5','1','5',now());
 
+ALTER TABLE rent ADD foreign key (rent_mem_no) REFERENCES member(member_no) ON DELETE SET NULL;
+ALTER TABLE rent ADD foreign key (rent_book_no) REFERENCES book(bk_no) ON DELETE SET NULL;
 ALTER TABLE rent RENAME COLUMN rent_mem_no TO member_no;
 ALTER TABLE rent RENAME COLUMN rent_book_no TO bk_no;
 
@@ -137,7 +137,7 @@ JOIN member USING (member_no)
 JOIN publisher USING (pub_no)
 WHERE bk_no = '2';
 -- 6. 회원번호가 1번인 회원이 대여한 도서들의 도서명, 출판사명, 대여일, 반납예정일을 조회하시오.
-SELECT bk_title,pub_name,rent_date, substr(adddate(now(), interval 7 day),1,10) "반납 예정일"
+SELECT bk_title,pub_name,rent_date, substr(adddate(now(), interval 7 day),1,10) "반납 예정일" 
 FROM book
 JOIN rent USING (bk_no)
 JOIN member USING (member_no)

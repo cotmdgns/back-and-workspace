@@ -57,7 +57,9 @@ HAVING email LIKE 'JOYCE%';
 
 
 -- 5. 이메일이 JOYCE.EDWARDS@sakilacustomer.org인 고객이 가장 최근에 빌린 영화 제목과 영화 내용을 조회 
-SELECT title,description ,rental_date
+
+-- 내가 한거
+SELECT title,description 
 FROM customer
 JOIN rental USING (customer_id)
 JOIN inventory USING (inventory_id)
@@ -68,5 +70,15 @@ GROUP BY title,email,description,rental_date
 HAVING email LIKE 'JOYCE%'
 ORDER BY rental_date DESC
 LIMIT 1;
+
+-- 쌤이한거
+SELECT title,description 
+FROM rental
+	JOIN inventory USING (inventory_id)
+	JOIN film USING (film_id)
+	JOIN customer USING (customer_id)
+WHERE email LIKE 'JOYCE%'
+ORDER BY rental_date DESC
+limit 1;
 
 
