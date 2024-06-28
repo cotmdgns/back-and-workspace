@@ -34,7 +34,9 @@ public class VariablePractice {
 	public void method1() {
 		int adult = 10000;
 		int Teenager = 7000;
-		int result = adult * 2 + Teenager * 3;
+		int adultcount = 2;
+		int Teenagercount = 3;
+		int result = adult * adultcount + Teenager * Teenagercount;
 		System.out.println("합계 "+result+"원");
 	}
 	
@@ -120,7 +122,7 @@ public class VariablePractice {
 		
 		char a = str.charAt(0);
 		char b = str.charAt(1);
-		char c = str.charAt(4);
+		char c = str.charAt(str.length()-1);
 		
 		
 		System.out.println("첫번째 문자 :" + a);
