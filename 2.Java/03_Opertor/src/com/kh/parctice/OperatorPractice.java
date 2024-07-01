@@ -10,11 +10,11 @@ public class OperatorPractice {
 	public static void main(String[] args) {
 
 		OperatorPractice o = new OperatorPractice();
-		o.method1();
-		o.method2();
-		o.method3();
-		o.method4();
-		o.method5();
+		//o.method1();
+		//o.method2();
+		//o.method3();
+		//o.method4();
+		//o.method5();
 		o.method6();
 		o.method7();
 		
@@ -24,6 +24,7 @@ public class OperatorPractice {
 	//모든 사람이 연필을 골고루 나눠가지려고 한다. 인원 수와 연필 개수를 입력 받고 
 	//1인당 동일하게 나눠가진 연필 개수와 나눠주고 남은 연필의 개수를 출력하세요.
 	public void method1() {
+		
 		System.out.print("인원 수를 입력해주세요 : ");
 		int num1 = Integer.parseInt(sc.nextLine());
 		
@@ -31,10 +32,10 @@ public class OperatorPractice {
 		int num2 = Integer.parseInt(sc.nextLine());
 		
 		int num3 = num1 / num2;
+		int num4 = num1 % num2;
 		
-		System.out.println("인원수 : "+num1);
-		System.out.println("연필 개수 : "+num2);
-		System.out.println("연필 개수 입력 : "+num3);
+		System.out.println("1인당 연필 개수 : "+num3);
+		System.out.println("연필 남은 : "+num4);
 		
 	}
 	
@@ -69,15 +70,16 @@ public class OperatorPractice {
 		System.out.print("입력 받을 수 : ");
 		int a = Integer.parseInt(sc.nextLine());
 		
-		System.out.println((a % 2 == 0) ? "짝수임":"짝수아님");
+		String str = (a % 2 == 0) ? "짝수임":"짝수아님";
+		System.out.println(str);
 		
 	}
 
 	//주민번호(-포함)를 입력받아 남자인지 여자인지 구분하여 출력하세요
 	public void method5() {
-		System.out.print("주민번호 입력 : ");
+		System.out.print("주민번호 입력(-포함) : ");
 		char a = sc.nextLine().charAt(7);
-		System.out.println(a == '1' ? "남자" : a == '3'  ? "남자" : "여자");
+		System.out.println(a == '1' || a == '3' ? "남자" : "여자");
 				
 	}
 
@@ -85,7 +87,7 @@ public class OperatorPractice {
 	public void method6() {
 		System.out.print("나이 입력해주세요 : ");
 		int a = Integer.parseInt(sc.nextLine());
-		System.out.println( a < 13 ? "어린이" : (13 < a) && (a <= 19) ? "청소녕" : "성인");
+		System.out.println( a <= 13 ? "어린이" : a <= 19 ? "청소년" : "성인");
 	}
 
 	//사과의 개수와 바구니의 크기(바구니 1개의 들어가는 사과의 개수)를 입력받아
@@ -97,9 +99,7 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		int b = Integer.parseInt(sc.nextLine());
 		
-		int c = a / b;
-		int d = a % b != 0 ? ++c : 0;
-		//int c = ((a % b) == 0) ? (a/b) : (a/b)+1;
+		int c = a % b == 0 ? a/b : a/b+1;
 		System.out.println("바구니 개수 : " + c);
 	}
 	
