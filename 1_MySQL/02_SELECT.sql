@@ -46,6 +46,8 @@
 SELECT *
 FROM employee;
 
+
+
 -- employee 테이블의 전체 사원들의 사변(emp_id), 이름(emp_name), 급여(salary)만을 조회
 SELECT emp_id,emp_name,salary
 FROM employee;
