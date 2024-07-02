@@ -1,5 +1,6 @@
 package com.kh.practice;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class ConditionPractice {
@@ -12,13 +13,13 @@ public class ConditionPractice {
 		
 		//C.method1();
 		//C.method2();
-		//C.method3(); // 몰라
+		//C.method3(); // 완전히 이해함
 		//C.method4();
 		//C.method5();
 		//C.method6();
 		//C.method7();
 		//C.method8();
-		//C.method9();  잘 된거같은데 이상함 >:(
+		//C.method9();
 		//C.method10();
 		C.method11();
 	}
@@ -84,7 +85,15 @@ public class ConditionPractice {
     	int pizza = Integer.parseInt(sc.nextLine());
     	System.out.print("피자 먹은 사람 수 : ");
     	int man = Integer.parseInt(sc.nextLine());
-    
+    	
+    	int needCount = man / pizza;
+    	// 두조각에서 열 조각
+    	if (man % pizza != 0) {
+    		++needCount;
+    		System.out.printf("필요한 피자의 수는 %d 판 입니다\n",needCount);
+    	}else {
+    		System.out.println("피자가 부족합니다\n");
+    	}
     }
 
     /*
@@ -105,27 +114,27 @@ public class ConditionPractice {
         축하합니다, 합격입니다!
      */
     public void method4() {
-    	System.out.print("국어 점수 입력");
+    	System.out.print("국어 점수 입력 : ");
     	int num1 = Integer.parseInt(sc.nextLine());
     	
-    	System.out.print("수학 점수 입력");
+    	System.out.print("수학 점수 입력 : ");
     	int num2 = Integer.parseInt(sc.nextLine());
 
-    	System.out.print("영어 점수 입력");
+    	System.out.print("영어 점수 입력 : ");
     	int num3 = Integer.parseInt(sc.nextLine());
     	
-    	String  a = (num1 >= 40 && num2 >= 40 && num3 >= 40? "합격" : "불합격");
     	
     	int sum = num1 + num2 + num3;
     	double avg = sum / 3;
     	
-    	if(a =="합격") {
-    		System.out.println(sum);
+    	if(num1 >= 40 && num2 >= 40 && num3 >= 40 && avg >= 60) {
+    		System.out.println("합계" +sum);
     		System.out.println(avg);
-    		System.out.println(a);
+    		System.out.println("합격");
     	}else {
-    		System.out.println(a);
+    		System.out.println("불합격");
     	}
+    	
     	
     	
     	
@@ -147,6 +156,22 @@ public class ConditionPractice {
     	double num3 = money * 1.2 - money;		//할인가격
     	
     	
+    	// -- 쌤이한거
+    	
+    	if(money >= 500000) {
+    		money = (int)(money * 0.8);
+    	}else if(money >= 300000) {
+    		money = (int)(money * 0.9);
+    	}else if(money >= 100000) {
+    		money = (int)(money * 0.95);
+    	}
+    	
+    	DecimalFormat df = new DecimalFormat("###,###");
+    	
+    	System.out.println(df.format(money));
+    	
+    	
+    	// -- 내가한거
     	if(100000 <= money && money < 300000) {
     		int num4 = money - (int)num1;
     		System.out.println("구매한 옷 가격 : " + money);
@@ -160,6 +185,7 @@ public class ConditionPractice {
     		System.out.println("구매한 옷 가격 : " + money);
     		System.out.println("할인되 다격 : " + num6);
     	}
+    	System.out.println("구매한 옷 가격 : " + money);
     }
 
 
@@ -208,6 +234,30 @@ public class ConditionPractice {
        로그인 실패
     */
     public void method7() {
+    	
+    	// 쌤이한거 코드가 간결함
+    	System.out.print("아이디를 입력해주세요 : ");
+    	String id = sc.nextLine();
+    	System.out.print("비밀번호를 입력해주세요 : ");
+    	String pwd = sc.nextLine();
+    	
+    	String idCheck = "happy";
+    	String pwdCheck = "1234";
+    	
+    	if(id.equals(idCheck) && pwd.equals(pwdCheck)) {
+    		System.out.println("로그인 성공!");
+    	}else if(!id.equals(idCheck) && !pwd.equals(pwdCheck)) {
+    		System.out.println("로그인 실패!");
+    	}else if(!id.equals(idCheck)) {
+    		System.out.println("아이디가 틀렸습니다!");
+    	}else{
+    		System.out.println("비밀번호가 틀렸습니다!");
+    	}
+    	
+    	
+    	
+    	/* 내가 한거 // 내껀 코드가 두껍고 쓸데없는게 있음
+    	 *  
     	System.out.print("아이디를 입력해주세요 : ");
     	String name = sc.nextLine();
     	System.out.print("비밀번호를 입력해주세요 : ");
@@ -223,6 +273,7 @@ public class ConditionPractice {
     	}else if(password != 1234){
     		System.out.println("비밀번호가 틀렸습니다");
     	}
+    	*/
     }
 
     /*
@@ -241,14 +292,27 @@ public class ConditionPractice {
     public void method8() {
     	System.out.print("키를 입력해주세요 : ");
     	double key = Double.parseDouble(sc.nextLine());
-    	
     	System.out.print("몸무게를 입력해주세요 : ");
     	double moge = Double.parseDouble(sc.nextLine());
     	
     	double BMI = moge / (key * key) * 10000;
+    	System.out.println("BMI 지수 : " + BMI);
     	
-    	System.out.println(BMI);
     	
+    	// 쌤이한거 위에서부터 높은수로 입력하여 && 연산자 쓸필요없게 만듬
+    	if(BMI >= 30) {
+    		System.out.println("고도 비만");
+    	}else if(BMI >= 25) {
+    		System.out.println("비만");
+    	}else if(BMI >= 23) {
+    		System.out.println("과체중");
+    	}else if(BMI >= 18.5) {
+    		System.out.println("정상체중");
+    	}else {
+    		System.out.println("저체중");
+    	}
+    	
+    	// 내가 한거
     	if(BMI < 18.5 ) {
     		System.out.println("저체중");
     	}else if(18.5 <= BMI && BMI < 23) {
@@ -283,6 +347,37 @@ public class ConditionPractice {
     	System.out.print("연산자를 입력(+,-,*,/,%) : ");
     	char giho = sc.nextLine().charAt(0);
     	
+    	if(num1 <= 0 || num2 <= 0) {
+    		System.out.println("잘못 입력했습니다. 프로그램을 종료합니다");
+    		return;
+    	}
+    	
+    	// 쌤이한거  간결하며 디폴트에 return 을 넣어서 식을 끝내버림
+    	int result=0;
+    	switch(giho) {
+    	case '+':
+    		result = num1 + num2 ;
+    		break;
+    	case '-':
+    		result = num1 - num2 ;
+    		break;
+    	case '*':
+    		result = num1 * num2 ;
+    		break;
+    	case '/':
+    		result = num1 / num2 ;
+    		break;
+    	case '%':
+    		result = num1 % num2 ;
+    		break;
+    	default:
+    		System.out.println("잘못 입력했습니다. 프로그램 종료합니다");
+    		return;
+    	}
+    	System.out.printf("%d %c %d = %d ",num1, giho, num2, result);
+    	
+
+    	// 내가한거
     	switch(giho) {
     	case '+':
     		System.out.println(num1 + "+" + num2 + "=" + (num1 + num2));
@@ -324,6 +419,30 @@ public class ConditionPractice {
     	System.out.print("메뉴 번호를 입력해주세요 : ");
     	int num1 = Integer.parseInt(sc.nextLine());
     	
+    	// 쌤이한거 switch문으로 사용 휠씬 간결하고 보기 좋음
+    	String result ="";
+    	switch(num1) {
+    	case 1:
+    		result = "입력 메뉴입니다";
+    		break;
+    	case 2:
+    		result = "수정 메뉴입니다";
+    		break;
+    	case 3:
+    		result = "조희 메뉴입니다";
+    		break;
+    	case 4:
+    		result = "삭제 메뉴입니다";
+    		break;
+    	case 9:
+    		result = "프로그램이 종료입니다";
+    		break;
+    	default:
+    		result = "잘못된 번호입니다";
+    		return;
+    	}
+    	
+    	// 내가 한거 나는 if else문으로 사용
     	if(num1 == 1) {
     		System.out.println("입력메뉴입니다");
     	}else if(num1 == 2) {
@@ -334,6 +453,8 @@ public class ConditionPractice {
     		System.out.println("삭제메뉴입니다");
     	}else if(num1 == 9){
     		System.out.println("프로그램이 종료됩니다");
+    	}else {
+    		System.out.println("잘못된 번호입니다");
     	}
     }
 
@@ -385,13 +506,40 @@ public class ConditionPractice {
     public void method11() {
     	System.out.print("중간 고사 점수 : ");
     	int num1 = Integer.parseInt(sc.nextLine());
+    	
     	System.out.print("기말 고사 점수 : ");
     	int num2 = Integer.parseInt(sc.nextLine());
+    	
     	System.out.print("과제 점수 : ");
     	int num3 = Integer.parseInt(sc.nextLine());
+    	
     	System.out.print("출석 점수 : ");
     	int num4 = Integer.parseInt(sc.nextLine());
 
+    	
+    	// 쌤이 한거 불필요한 코드는 다 짤라내고 간편하게 볼 수 있게끔 만드심
+    	System.out.println("========결과========");
+    	double scores1 = num1 * 0.2;
+    	double scores2 = num2 * 0.3;
+    	double scores3 = num3 * 0.3;
+    	double sum = scores1 + scores2 + scores3 + num4;
+    	if(sum >= 70 && num4 >= 20 * 0.7) {
+    		System.out.println("중간 고사 점수(20)" + scores1);
+    		System.out.println("기말 고사 점수(30)" + scores2);
+    		System.out.println("과제 점수(30)" + scores3);
+    		System.out.println("출석 점수(20)" + num4);
+    		System.out.println("총점" + sum);
+    		System.out.println("PASS");
+    	}else {
+    		if(num4 < 20 * 0.7){
+        		System.out.println("FAIL [출석 횟수 부족] ("+ num4 +"/20)");
+    		}
+    		if(sum < 70) {
+    			System.out.println("FALL [점수 미달] (총점 "+ sum +")");
+    		}
+    	}
+
+    	/*  // 내가 한거 식이 너무 복잡하고 보기 더러움 (촘점에 출석을 계산안함
     	double numEx1 = num1 * 0.2;
     	double numEx2 = num2 * 0.3;
     	double numEx3 = num3 * 0.3;
@@ -412,5 +560,6 @@ public class ConditionPractice {
     		System.out.println("FALL [점수 미달] (총점 "+ total1 +")");
     		System.out.println("FAIL [출석 횟수 부족] ("+ total2 +"/20)");
     	}
+    	*/
     }
 }
