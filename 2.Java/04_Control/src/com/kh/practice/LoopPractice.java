@@ -11,9 +11,10 @@ class LoopPractice {
 		LoopPractice l = new LoopPractice();
 		//l.method1();
 		//l.method2();
-		l.method3(); 킾
+		//l.method3();
 		//l.method4();
 		//l.method5();
+		l.method6();
 	}
  
     /*
@@ -37,28 +38,19 @@ class LoopPractice {
     }
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
-    public void method2() {
-    	int gol = 1;
-    	int wwa = -2;
-    	int sum = 0;
-    	
-    	boolean run = true;
-    	while(run) {
-    		System.out.println("첫번째 SUM : "+sum);
-    		sum+=gol;
-    		System.out.println("첫번째 홀 계산 : "+gol);
-    		gol+=2;
-    		System.out.println("계산 후 홀 : "+sum);
-    		sum+=wwa;
-    		System.out.println("두번째 짝 계산 :"+wwa);
-    		wwa-=2;
-    		System.out.println("계산 후 짝 : "+sum);
-    		if(sum <= -100) {
-    			run = false;
-    		}
-    		System.out.println(sum);
-    	}
-    }
+	public void method2() {
+		int sum = 0;
+		int count = 0;
+
+		
+		while (sum < 100) {
+			count++;
+			if(count % 2 ==	0) {sum += count;}
+			else {sum -= count;}
+		}	
+		System.out.println(sum);
+		System.out.println("총 횟수 " + count);
+	}
 
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
@@ -74,10 +66,13 @@ class LoopPractice {
     	System.out.print("문자을 선택해주세요 : ");
     	char ch = sc.nextLine().charAt(0);
     	
-    	
+    	int count = 0;
     	for(int i=0;i<str.length();i++) {
-    		System.out.println(str.charAt(i));
+    		if(str.charAt(i) == ch) {
+    			count++;
+    		}
     	}
+    	System.out.println(str + " 안에 포함된 " + ch + " 개수 " + count);
     	
     }
 
@@ -183,7 +178,53 @@ class LoopPractice {
 	    비긴 횟수 : 1, 진 횟수 : 1, 이긴 횟수 : 1
     */
     public void method6() {
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
+    	
+    	int win = 0; 	//이김
+    	int begim = 0;	//비김
+    	int lose = 0;	//졌음
+    	
+    	boolean run = true;
+    	while(run) {
+    		System.out.print("가위바위보 : ");
+    		String myturn = sc.nextLine(); 		// 나의 가위바위보
+	
+    		int com = (int) (Math.random()*3+1);
+    		String str = "";
+    		switch(com) {
+    		case 1: 
+    			str = "가위";
+    			break;
+    		case 2:
+    			str = "바위";
+    			break;
+    		case 3:
+    			str = "보";
+    			break;
+    		}									// 컴퓨터 받은 값
+    		
+    		System.out.println("컴퓨터 :" + str);
+    		System.out.println(name + " : " + myturn);
 
+    		if(myturn.equals(str)) {
+    			System.out.println("비겼습니다");
+    			begim++;
+    		}else if(myturn.equals("가위") && str.equals("바위") || 
+    				 myturn.equals("바위") && str.equals("보") ||
+    				 myturn.equals("보") && str.equals("가위")) {
+				System.out.println("졌습니다");
+				lose++;
+    		}else if(myturn.equals("가위") && str.equals("보") || 
+   				   	 myturn.equals("바위") && str.equals("가위") ||
+   				   	 myturn.equals("보") && str.equals("바위")) {
+    			System.out.println("이겼습니다");
+    			win++;
+    			run = false;
+    		}    		
+    	}
+    	System.out.println("비긴 횟수 : "+begim+", 진 횟수 : "+lose+", 이긴 횟수 : "+win);	
     }
 
 }
