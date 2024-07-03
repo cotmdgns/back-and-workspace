@@ -181,7 +181,6 @@ class LoopPractice {
     	System.out.print("당신의 이름을 입력해주세요 : ");
     	String name = sc.nextLine();
     	
-    	
     	int win = 0; 	//이김
     	int begim = 0;	//비김
     	int lose = 0;	//졌음
@@ -216,9 +215,7 @@ class LoopPractice {
     				 myturn.equals("보") && str.equals("가위")) {
 				System.out.println("졌습니다");
 				lose++;
-    		}else if(myturn.equals("가위") && str.equals("보") || 
-   				   	 myturn.equals("바위") && str.equals("가위") ||
-   				   	 myturn.equals("보") && str.equals("바위")) {
+    		}else{
     			System.out.println("이겼습니다");
     			win++;
     			run = false;
