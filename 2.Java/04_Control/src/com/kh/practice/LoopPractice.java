@@ -1,5 +1,6 @@
 package com.kh.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class LoopPractice {
@@ -27,10 +28,17 @@ class LoopPractice {
         1
      */
     public void method1() {
+    	/*썜이 한거*/ // 쌤은 if문
+    	System.out.print("사용자 입력 : ");
+    	int num1 = sc.nextInt();
+    	for(int i = num1; i >= 1 ; i--) {
+    		System.err.println(i);
+    	}
+    	
+    	
+    	/*내가 한거*/ //나는 while문
     	System.out.print("숫자(1~100) 하나를 입력해주세요 : ");
     	int num = Integer.parseInt(sc.nextLine());
-    	
-    	
     	while(num > 0) {
     		System.out.println(num);
     		num--;
@@ -39,16 +47,37 @@ class LoopPractice {
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
 	public void method2() {
-		int sum = 0;
-		int count = 0;
-
 		
+		int sum1 = 0;
+		int numw = 1;
+		
+		while(true) {
+			if(numw % 2 == 0) {
+				sum1 -= numw;
+			}else {
+				sum1 += numw;
+			}
+			if(sum1 >= 100) {
+				System.out.println(numw);
+				break;
+			}
+			numw++;
+		}
+		
+		
+		
+		//내가한거 
+		int sum = 0;
+		int count = 0;		
 		while (sum < 100) {
 			count++;
-			if(count % 2 ==	0) {sum += count;}
-			else {sum -= count;}
+			if(count % 2 ==	0) {
+				sum -= count;
+				}else {
+				sum += count;
+				}
+			
 		}	
-		System.out.println(sum);
 		System.out.println("총 횟수 " + count);
 	}
 
@@ -61,6 +90,26 @@ class LoopPractice {
 
     */
     public void method3() {
+    	//쌤이 한거
+    	System.out.print("문자열 : ");
+    	String str1 = sc.nextLine();
+    	System.out.print("문자 : ");
+    	char ch1 = sc.nextLine().charAt(0);
+    	int count1 = 0;
+    	/*
+    	for(int i = 0; i < str1.length(); i++) {
+    		if(str1.charAt(i) == ch1) count1++;
+    	}
+    	*/
+    	// 상향된 for문
+    	for(char s : str1.toCharArray()) { //for(값 : 배열)
+    		if(ch1 == s) count1++;
+    	}
+    	
+    	System.out.println(str1 + "안에 포험된" + "ch1" + "개수 : " + count1 );
+    	
+    	
+    	// 내가 한거
     	System.out.print("문자열을 선택해주세요 : ");
     	String str= sc.nextLine();
     	System.out.print("문자을 선택해주세요 : ");
@@ -87,7 +136,14 @@ class LoopPractice {
         0
      */
     public void method4() {
+    	//쌤이헌거
+    	while(true) {
+    		int random = (int) (Math.random()*11); 
+    		System.out.println(random);
+    		if(random == 0) break;
+    	}
     	
+    	//내가 한거
     	boolean run = true;
     	while(run) {
     		double ran = Math.random()*11;
@@ -110,6 +166,23 @@ class LoopPractice {
 
      */
     public void method5() {
+    	// 쌤이 한거
+    	int[] dice = new int[6];
+    	// 이 부분 이해 아지 않으시다면 switch나 if 조건문 화룔하시고 나서!
+    	for(int i = 0; i < 10; i++) {
+    		int random = (int) (Math.random()* 6); // 1~6
+    		// -> random : 1 --> dice[0];
+    		// -> random : 2 --> dice[1];
+    		dice[random]++;
+    	}
+    	for(int i = 0; i  < dice.length;i++) {
+    		System.out.println((i+1) + " : "+ dice[i]);
+    	}
+    	
+    	
+    	
+    	
+    	// 내가 한거 /맞긴한데 뭔가 이상함 더 줄일수 있을거같은데
     	boolean run = true;
     	int count = 0;
     	
@@ -120,7 +193,7 @@ class LoopPractice {
     	int jusawi5 = 0;
     	int jusawi6 = 0;
     	while(run) {
-    		int num1 = (int) (Math.random()*6+1);
+    		int num1 = (int) (Math.random()*6+1); // 1~6 -> 0 ~ 5
     		switch(num1) {
     		case 1:
     			jusawi1++;
@@ -178,6 +251,50 @@ class LoopPractice {
 	    비긴 횟수 : 1, 진 횟수 : 1, 이긴 횟수 : 1
     */
     public void method6() {
+    	// 쌤이 한거
+    	String[] rps = {"가위", "바위", "보"};
+    	int win1 = 0;
+    	int lose1 = 0;
+    	int draw1 = 0;
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name1 = sc.nextLine();
+    	
+    	while(true) {
+    		System.out.print("가위바위보 : ");
+    		String input = sc.nextLine();
+    		
+    		// 0 - 가위, 1 - 바, 2 - 보
+    		int computer = (int)(Math.random()*3);
+    		System.out.println("컴퓨터 : " + rps[computer]);
+    		
+    		System.out.println(name1 + " : " + input);
+    		
+    		// 배열에서 값으로 인덱스 찾기 -> 사용자가 입력한 값을 숫자로!
+    		int number = Arrays.asList(rps).indexOf(input);
+    		
+    		if(computer == number) {
+    			// 비겼을 경우
+    			System.err.println("비겼습니다");
+    			draw1++;
+    		}else if((number==0 && computer == 2) 
+    				|| (number == 1 && computer == 0) 
+    				|| (number == 2 && computer == 1)){
+    			// 이겼을 경우
+    			System.out.println("이겼습니다!");
+    			win1++;
+    			break;
+    		}else {
+    			// 졌을 경우
+    			System.out.println("졌습니다 ㅠㅠ");
+    			lose1++;
+    		}
+    	}
+    	
+    	System.out.println("비긴 횟수 : " + draw1 + ", 진 횟수 : " + lose1 + ", 이긴 횟수 : " + win1 );
+    	
+    	
+    	/*
+    	// 내가 한거
     	System.out.print("당신의 이름을 입력해주세요 : ");
     	String name = sc.nextLine();
     	
@@ -222,6 +339,7 @@ class LoopPractice {
     		}    		
     	}
     	System.out.println("비긴 횟수 : "+begim+", 진 횟수 : "+lose+", 이긴 횟수 : "+win);	
+    */	
     }
-
+	
 }

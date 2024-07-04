@@ -107,7 +107,7 @@ FROM employee;
 SELECT emp_name, emp_no , replace(emp_no, substr(emp_no,-6,6),"******")
 FROM employee;
 -- rpad
-SELECT emp_name, rpad(substr(emp_no,1,8), char_length(emp_no),'*') 
+SELECT emp_name, rpad(substr(emp_no,1,8), char_length(emp_no),'*') 
 FROM employee;
 -- concat
 SELECT emp_name, concat(substr(emp_no,1,8),"******")
