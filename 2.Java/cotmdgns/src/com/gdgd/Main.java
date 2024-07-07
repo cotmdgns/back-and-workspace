@@ -7,6 +7,6 @@ public class Main {
 		int a = sc.nextInt();
 		
 		// 연도가 주어졌을때 맞으면 1 아니면 0
-		if(a % 4 == 0 &&)
+		//if(a % 4 == 0 &&)
 	}
 }
