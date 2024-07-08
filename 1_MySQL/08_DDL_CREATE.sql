@@ -254,6 +254,7 @@ CREATE TABLE member(
     grade_id INT,
 	FOREIGN KEY (grade_id) REFERENCES mem_grade(grade_code)
 );
+
 INSERT INTO member(mem_id,mem_pwd,mem_name,grade_id)
 VALUES('user01', 'pass01','최제한',null);
 -- >> 외래키 제약조건이 부여되도 기본적으로 null 허용

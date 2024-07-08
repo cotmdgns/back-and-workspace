@@ -15,8 +15,15 @@ public class Application {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Application a = new Application();
-
 		
+		
+		//일단은 다시 만들어야함 왜?
+		//employee는 저장만 하는공간이기 때문이지
+		// 그러면 컨트롤에서 불러와야하는데
+		// 근데 왜 어플리케이션에도 메서드가 있냐
+		//?????????????????????????????
+		
+		/*
 		boolean run = true;
 		while(run) {
 			System.out.println("1.사원 정보 추가");

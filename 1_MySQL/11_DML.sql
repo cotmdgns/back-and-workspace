@@ -27,6 +27,12 @@ CREATE TABLE emp(
 );
 SELECT * FROM emp;
 
+CREATE TABLE qqq(
+	eme_id INT PRIMARY KEY,
+    emp_name VARCHAR(30) NOT NULL unique,
+    emp_no INT,
+);
+
 -- 1)
 INSERT INTO emp 
 VALUES (1, '윤대훈', '서비스 개발팀', default);
@@ -97,6 +103,7 @@ WHERE dept_code = 'D1';
 SELECT * FROM emp;
 SELECT * FROM emp_manager;
 SELECT * FROM emp_dept;
+
 
 
 /*
