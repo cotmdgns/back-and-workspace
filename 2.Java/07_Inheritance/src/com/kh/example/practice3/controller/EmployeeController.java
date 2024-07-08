@@ -6,17 +6,16 @@ public class EmployeeController {
 	
 	private Employee e = new Employee();
 	
-	
-	// 값을 받아내는 공간, 만약 수정을 안하면 이녀석만 호출
+	// 값을 받아내는 공간 이녀석들은 저장공간이랑 나중에 수정할때 불러올꺼야
+	// 메인클래스에서 값을 받아와서 ? ㅇㅋ 뭔지 알겠다
 	public void add(int empNo, String name, 
 			char gender, String phone) {
-				
 		e.setEmpNo(empNo);
 		e.setName(name);
 		e.setGender(gender);
 		e.setPhone(phone);
 	}
-	// 값을 받아내는 공간2 , 만약 수정까지 하게 된다면 이녀석이 호출
+	// 값을 받아내는 공간2
 	public void add(int empNo, String name, 
 			char gender, String phone,String 
 			dept,int salary, double bouns) {
@@ -38,5 +37,12 @@ public class EmployeeController {
 	}
 	public void modify(int salary) {
 		e.setSalary(salary);
+	}
+	
+	public String info() { // 데이터 정보 메소드 이기때문에 ? 메소
+		return	"Employee [empNo=" + e.getEmpNo() + ", name=" + e.getName() + 
+				", gender=" + e.getGender() + ", phone=" + e.getPhone() + 
+				", dept="+ e.getDept() +", salary=" + e.getSalary() + 
+				", bouns=" + e.getBouns() + "]";
 	}
 }
