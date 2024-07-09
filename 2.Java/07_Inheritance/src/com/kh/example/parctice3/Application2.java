@@ -116,4 +116,7 @@ public class Application2 {
 	public void printEmp() {
 		System.out.println(Ec2.info());
 	}
+
+	
+
 }

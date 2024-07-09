@@ -35,7 +35,7 @@ public class Application {
 		Employee s2 = new Secretary("송준호", 6000,"우현성");
 		
 		// 다형성 + 객체 배열
-		Employee[] empArr = {e1,e3,m2,s2};
+		Employee[] empArr = {e1,e3,m2,s2}; // 다른 객체 생성를 한거였
 		for(Employee employee : empArr) {
 			System.out.println(employee);
 		}

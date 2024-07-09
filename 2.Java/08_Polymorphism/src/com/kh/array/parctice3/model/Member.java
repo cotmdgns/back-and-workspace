@@ -1,29 +1,27 @@
 package com.kh.array.parctice3.model;
 
+import java.util.Arrays;
+
 public class Member {
-	private String nama;
-	private int age;
-	private String title;
-	private int coupon;
-	private String bookList;
-	private String accessAge;
+	
+	protected String name;
+	protected int age;
+	protected int coupon;
+	protected String[] bookList;
+	
 	public Member() {
 	}
-	public Member(String nama, int age, String title, int coupon, String bookList, String accessAge) {
-		this.nama = nama;
+	public Member(String name, int age, int coupon, String[] bookList) {
+		this.name = name;
 		this.age = age;
-		this.title = title;
 		this.coupon = coupon;
 		this.bookList = bookList;
-		this.accessAge = accessAge;
 	}
-	
-	
-	public String getNama() {
-		return nama;
+	public String getName() {
+		return name;
 	}
-	public void setNama(String nama) {
-		this.nama = nama;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getAge() {
 		return age;
@@ -31,36 +29,22 @@ public class Member {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
 	public int getCoupon() {
 		return coupon;
 	}
 	public void setCoupon(int coupon) {
 		this.coupon = coupon;
 	}
-	public String getBookList() {
+	public String[] getBookList() {
 		return bookList;
 	}
-	public void setBookList(String bookList) {
+	public void setBookList(String[] bookList) {
 		this.bookList = bookList;
 	}
-	public String getAccessAge() {
-		return accessAge;
-	}
-	public void setAccessAge(String accessAge) {
-		this.accessAge = accessAge;
-	}
-	
-	
 	@Override
 	public String toString() {
-		return "Member [nama=" + nama + ", age=" + age + ", title=" + title + ", coupon=" + coupon + ", bookList="
-				+ bookList + ", accessAge=" + accessAge + "]";
+		return "Member [name=" + name + ", age=" + age + ", coupon=" + coupon + ", bookList="
+				+ Arrays.toString(bookList) + "]";
 	}
 	
 	

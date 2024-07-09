@@ -16,5 +16,13 @@ public class Main {
 			System.out.println(4);
 		}
 		
+<<<<<<< Updated upstream
+=======
+		if(a % 4 == 0 && a % 100 != 0 || a % 4 == 0 && a % 400 == 0) {
+			System.out.println("1");
+		}else{
+			System.out.println("0");
+		}
+>>>>>>> Stashed changes
 	}
 }

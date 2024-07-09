@@ -16,6 +16,7 @@ public class Application {
 		Scanner sc = new Scanner(System.in);
 		Application a = new Application();
 		
+<<<<<<< Updated upstream
 		
 		//일단은 다시 만들어야함 왜?
 		//employee는 저장만 하는공간이기 때문이지
@@ -24,6 +25,8 @@ public class Application {
 		//?????????????????????????????
 		
 		/*
+=======
+>>>>>>> Stashed changes
 		boolean run = true;
 		while(run) {
 			System.out.println("1.사원 정보 추가");
@@ -34,6 +37,7 @@ public class Application {
 			int num = Integer.parseInt(sc.nextLine());
 			a.employeeMenu(num); // 메뉴 선택 버튼
 		}
+		
 	}
 
 	
@@ -47,13 +51,11 @@ public class Application {
 		}else if(num == 3) { // 3번 출력
 			printEmp();
 		}else if(num == 9) {
-			return num;
+			
 		}
 		return num;
 	}
-	
-	
-	
+		
 	public void insertEmp() { // 저장할 데이터를 사용자에게 받는 메서드 // 1번
 		System.out.print("사원 번호 : ");
 		int emp_no = Integer.parseInt(sc.nextLine());
