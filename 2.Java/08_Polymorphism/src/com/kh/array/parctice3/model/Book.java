@@ -1,9 +1,5 @@
 package com.kh.array.parctice3.model;
 
-<<<<<<< HEAD
-public class Book {
-
-=======
 public class Book extends Member{
 	
 	
@@ -38,6 +34,4 @@ public class Book extends Member{
 	}
 	
 	
-	
->>>>>>> 4de9483c242bf2eb501b9541d27882e85f987d23
 }

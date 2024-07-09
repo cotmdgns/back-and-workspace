@@ -1,4 +1,4 @@
-package com.kh.array.parctice3.Controller;
+package com.kh.array.parctice3.controller;
 
 import com.kh.array.parctice3.model.Book;
 import com.kh.array.parctice3.model.Member;
