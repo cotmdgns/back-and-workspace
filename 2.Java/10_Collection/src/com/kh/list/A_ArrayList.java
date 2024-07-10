@@ -72,7 +72,6 @@ public class A_ArrayList {
 		list.add(new Person("남궁민" , "서울숲" , 46));
 		list.add(new Person("이시언" , "상도동" , 42));
 		list.add(new Person("이제훈" , "삼성동" , 40));
-		
 		// 2. add : 인덱스를 저장하여 해당 인덱스에 추가
 		// 	   -> 내부적으로 기존에 있는 것들은 뒤로 땡기고 해당 인덱스에 값 추가
 		list.add(1, new Person("유재석" , "논현동" , 51));
@@ -100,7 +99,7 @@ public class A_ArrayList {
 		// 8. addAll : 컬렉션을 통째로 뒤로 추가
 		list.addAll(sub);
 	
-		System.out.println(list);
+		System.out.println("저 여깄어요 "+list);
 		
 		// 9. isEmpty : 컬렉션이 비어있는지
 		System.out.println("리스트가 비어있는가? " + list.isEmpty());
