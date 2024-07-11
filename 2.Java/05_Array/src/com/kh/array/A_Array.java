@@ -42,7 +42,7 @@ public class A_Array {
 		
 		
 	}
-	// 배열 선언과 동시에 값을 초고화
+	// 배열 선언과 동시에 값을 초기화
 	public void method2() {
 		int[] nums = {100,70,90,80,60};
 		for(int i=0;i<nums.length;i++) {
@@ -88,7 +88,7 @@ public class A_Array {
 		System.out.println(Arrays.toString(copy));
 		
 	}
-	// 2. 갚은 복사 : 동일한 새로운 배열을 하나 생성해서 내부 값들도 함께 복사
+	// 2. 깊은 복사 : 동일한 새로운 배열을 하나 생성해서 내부 값들도 함께 복사
 	//1) for 문을 이용한 깊은 복사
 	public void method5() {
 		int[] number = {1, 2, 3, 4, 5};
