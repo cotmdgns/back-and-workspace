@@ -44,7 +44,7 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [name=" + name + ", age=" + age + ", coupon=" + coupon + ", bookList="
-				+ Arrays.toString(bookList) + "]";
+				+"["+ bookList +","+ bookList+"]" + "]";
 	}
 	
 	

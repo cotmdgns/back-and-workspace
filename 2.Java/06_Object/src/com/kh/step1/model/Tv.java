@@ -2,7 +2,7 @@ package com.kh.step1.model;
 
 //Model 		: 모델 하나당 테이블 1개
 //View			: 프론트엔드 영역 (화면)		
-//Controllor	: 기능개발
+//Controller	: 기능개발
 
 public class Tv {
 	
