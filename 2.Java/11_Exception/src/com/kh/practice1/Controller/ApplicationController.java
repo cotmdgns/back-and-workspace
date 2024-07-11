@@ -10,22 +10,18 @@ public class ApplicationController {
 	Member m = new Member();
 	ArrayList<Member> list = new ArrayList();
 	
-	public String endsinger() { // 마지막에 집어넣기
-		list.add(new Member(m.getSing(),m.getSinger()));
-		return "저장 완료!";
+	public void insert(String sing, String singer) { //
+		for(int i = 0; i<list.size(); i++) {
+			if(list.get(i).getSing().equals(sing) && list.get(i).getSing().equals(singer)) {
+				System.out.println("중복된 곡입니다");
+				return;
+			}
+		}
 	}
-	
-	public String firstsinger() { // 첫번째에 집어넣기 
-		list.add(0,new Member(m.getSing(),m.getSinger()));
-		return "저장 완료!";
+	public void print() {
+		for(int i=0; i< list.size(); i++) {
+			System.out.println("곡 명 :"+list.get(i).getSing());
+			System.out.println("가수 명 :"+list.get(i).getSinger());
+		}
 	}
-	
-	public void singPrint() {
-		System.out.println(list);
-	}
-	
-	public String info() {
-		return null;
-	}
-	
 }
