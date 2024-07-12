@@ -1,19 +1,16 @@
-package com.kh.array.parctice3.model;
-
-public class book2 {
+package com.kh.array.practice.model;
+public class Book {
 	
 	private String title;
 	private boolean coupon;
 	private int accessAge;
-	public book2() {
-	}
-	public book2(String title, boolean coupon, int accessAge) {
+	
+	public Book() {}
+	public Book(String title, boolean coupon, int accessAge) {
 		this.title = title;
 		this.coupon = coupon;
 		this.accessAge = accessAge;
 	}
-	
-	
 	public String getTitle() {
 		return title;
 	}
@@ -32,13 +29,10 @@ public class book2 {
 	public void setAccessAge(int accessAge) {
 		this.accessAge = accessAge;
 	}
-	
-	
 	@Override
 	public String toString() {
-		return "book2 [title=" + title + ", coupon=" + coupon + ", accessAge=" + accessAge + "]";
+		return "Book [title=" + title + ", coupon=" + coupon + ", accessAge=" + accessAge + "]";
 	}
-	
 	
 	
 }

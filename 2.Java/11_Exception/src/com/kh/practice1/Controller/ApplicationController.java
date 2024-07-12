@@ -10,34 +10,38 @@ public class ApplicationController {
 	Member m = new Member();
 	ArrayList<Member> list = new ArrayList();
 	
-	public void insert(String sing, String singer) { // 마지막에 추가하기
+	public String insert(String sing, String singer) { // 마지막에 추가하기
 		for(int i = 0; i<list.size(); i++) {
 			if(list.get(i).getSing().equals(sing)) {
-				System.out.println("중복된 곡입니다");
-				return;
+				return "중복된 곡입니다";
 			}
 		}
 		list.add(new Member(sing, singer));
-        System.out.println("추가 성공!");
+		return "추가 성공!";
 	}
-	
-	public void insert2(String sing, String singer) { // 처음에 추가하기
+
+	public String insert2(String sing, String singer) { // 처음에 추가하기
 		for(int i = 0; i<list.size(); i++) {
 			if(list.get(i).getSing().equals(sing)) {
-				System.out.println("중복된 곡입니다");
-				return;
+				
+				return "중복된 곡입니다";
 			}
 		}
 		list.add(0,new Member(sing, singer));
-        System.out.println("추가 성공!");
+		return "추가 성공!";
 	}
 	
-	public void print() { // 곡 추가
+	
+	
+	public String print() { // 곡 출력
+		String a = "";
 		for(int i = 0; i<list.size(); i++) {
-			System.out.println("곡 명 :"+list.get(i).getSing());
-			System.out.println("가수 명 :"+list.get(i).getSinger());
+			a += "곡 명 :"+list.get(i).getSing()+"\n가수 명 :"+list.get(i).getSinger()+"\n";
 		}
+		return a;
 	}
+	
+	
 	
 	public void searchOn(String sing) { //곡 검색하기
 		for(int i = 0; i<list.size()+1; i++) {

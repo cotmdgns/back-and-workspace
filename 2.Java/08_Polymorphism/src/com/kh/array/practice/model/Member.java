@@ -1,17 +1,15 @@
-package com.kh.array.parctice3.model;
-
+package com.kh.array.practice.model;
+import java.util.ArrayList;
 import java.util.Arrays;
-
-public class Member2 {
+public class Member {
 	
 	private String name;
 	private int age;
 	private int coupon;
-	private book2[] bookList = new book2[2];
-	
-	public Member2() {
+	private ArrayList<Book> bookList = new ArrayList<>();
+	public Member() {
 	}
-	public Member2(String name, int age, int coupon, book2[] bookList) {
+	public Member(String name, int age, int coupon, ArrayList<Book> bookList) {
 		this.name = name;
 		this.age = age;
 		this.coupon = coupon;
@@ -35,19 +33,17 @@ public class Member2 {
 	public void setCoupon(int coupon) {
 		this.coupon = coupon;
 	}
-	public book2[] getBookList() {
+	public ArrayList<Book> getBookList() {
 		return bookList;
 	}
-	public void setBookList(book2[] bookList) {
+	public void setBookList(ArrayList<Book> bookList) {
 		this.bookList = bookList;
 	}
-	
-	
 	@Override
 	public String toString() {
-		return "Member2 [name=" + name + ", age=" + age + ", coupon=" + coupon + ", bookList="
-				+ Arrays.toString(bookList) + "]";
+		return "Member [name=" + name + ", age=" + age + ", coupon=" + coupon + ", bookList=" + bookList + "]";
 	}
+	
 	
 	
 }
