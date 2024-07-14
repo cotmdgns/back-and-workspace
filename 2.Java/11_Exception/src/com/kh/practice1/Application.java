@@ -79,7 +79,6 @@ public class Application {
 		System.out.println("**** 마지막 위치에 곡 검색 *****");
 		System.out.print("곡 명 : ");
 		String sing = sc.nextLine();
-		
 		System.out.print("가수 명 : ");
 		String singer = sc.nextLine();
 		System.out.println(AC.insert(sing,singer));
@@ -90,7 +89,7 @@ public class Application {
 		String sing = sc.nextLine();
 		System.out.print("가수 명 : ");
 		String singer = sc.nextLine();
-		AC.insert2(sing,singer);
+		System.out.println(AC.insert2(sing,singer));
 	}
 	public void mainMenu3() {
 		System.out.println("**** 전체 곡 목록 출력 *****");
@@ -102,14 +101,14 @@ public class Application {
 		System.out.print("검색할 곡 명 : ");
 		String sing = sc.nextLine();
 		
-		AC.searchOn(sing);
+		System.out.println(AC.searchOn(sing));
 	}
 	public void mainMenu5() {
 		// 특정곡 지우기
 		System.out.print("삭제할 곡 명 :");
 		String deletesing = sc.nextLine();
 
-		AC.remove(deletesing);
+		System.out.println(AC.remove(deletesing));
 		
 	}
 	public void mainMenu6() {
@@ -121,13 +120,15 @@ public class Application {
 		String updatesing = sc.nextLine();
 		System.out.print("수정할 가수 명 : ");
 		String updatesinger = sc.nextLine();
-		AC.upperData(searchsing, updatesing, updatesinger);	
+		System.out.println(AC.upperData(searchsing, updatesing, updatesinger));	
 
 	}
 	public void mainMenu7() {
+		AC.toLower();
 		//몰라 >:(
 	}
 	public void mainMenu8() {
+		AC.toUpper();
 		//몰라 >:(		
 	}
 

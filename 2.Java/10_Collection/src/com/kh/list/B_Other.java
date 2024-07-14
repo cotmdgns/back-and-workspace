@@ -28,7 +28,7 @@ public class B_Other {
 		System.out.println("size : " + v.size()); // 11
 		System.out.println("capacity : " + v.capacity()); //용량 12
 		
-		v.trimToSize(); 
+		v.trimToSize();  // size 만큼 짜른다.
 		System.out.println("size : " + v.size()); // 11
 		System.out.println("capacity : " + v.capacity()); //용량 11
 	}
@@ -39,8 +39,8 @@ public class B_Other {
 		s.push(0);
 		s.push(1);
 		s.push(2);
-		s.push(3);
-		s.pop();
+		s.push(3);	// 넣기
+		s.pop(); 	// 빼기
 		s.push(4);
 		s.pop();
 		s.push(5);
@@ -69,8 +69,8 @@ public class B_Other {
 	}
 	public static void main(String[] args) {
 		B_Other b = new B_Other();
-//		b.method1();
-//		b.method2();
+		//b.method1();
+		//b.method2();
 		b.method3();
 	}
 

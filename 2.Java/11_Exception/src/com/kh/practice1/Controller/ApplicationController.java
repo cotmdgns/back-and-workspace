@@ -1,6 +1,7 @@
 package com.kh.practice1.Controller;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import com.kh.practice1.model.Member;
 
@@ -23,7 +24,6 @@ public class ApplicationController {
 	public String insert2(String sing, String singer) { // 처음에 추가하기
 		for(int i = 0; i<list.size(); i++) {
 			if(list.get(i).getSing().equals(sing)) {
-				
 				return "중복된 곡입니다";
 			}
 		}
@@ -43,27 +43,38 @@ public class ApplicationController {
 	
 	
 	
-	public void searchOn(String sing) { //곡 검색하기
-		for(int i = 0; i<list.size()+1; i++) {
-			if(i == list.size()) {System.out.println("없습니다") ;break;} 
-			if(list.get(i).getSing().equals(sing)) {
-				System.out.println(list.get(i).getSing()+"-"+list.get(i).getSinger()+"을 검색 했습니다.");break;
-			}
-		}
-	}
-	public void remove(String deletesing) { //곡 지우기
-		for(int i = 0; i<list.size()+1; i++) {
-			if(i == list.size()) {System.out.println("없습니다") ;break;} 
-			if(list.get(i).getSing().equals(deletesing)) {
-				list.remove(i);break;
-			}
-		}
-	}
-	public void upperData(String searchsing,String sing,String singer) { //곡 업데이트하기
+	public String searchOn(String sing) { //곡 검색하기
 		for(int i = 0; i<list.size()+1; i++) {
 			if(i == list.size()) {
-				System.out.println("없습니다") ;break;
+				return "없습니다";
+				} 
+			if(list.get(i).getSing().equals(sing)) {
+				return list.get(i).getSing()+"-"+list.get(i).getSinger()+"을 검색 했습니다.";
+			}
+		}
+		return "없습니다";
+	}
+	public String remove(String deletesing) { //곡 지우기
+		for(int i = 0; i<list.size()+1; i++) {
+			if(i == list.size()) {
+				return "없습니다";
+				} 
+			if(list.get(i).getSing().equals(deletesing)) {
+				list.remove(i);
+				break;
+			}
+		}
+		return "삭제됬습니다";
+	}
+	public String upperData(String searchsing,String sing,String singer) { //곡 업데이트하기
+		for(int i = 0; i<list.size()+1; i++) {
+			if(i == list.size()) {
+				return "없습니다";
 			} 
+			if(list.get(i).getSing().equals(sing)) {
+				return "중복된 곡입니다";
+			}
+			
 			if(list.get(i).getSing().equals(searchsing)) {
 				m.setSing(sing);
 				m.setSinger(singer);
@@ -71,6 +82,17 @@ public class ApplicationController {
 				break;
 			}
 		}
+		return "없습니다";
 	}
+	
+	public void toLower() {
+		list.stream()
+		.sorted(Comparator.reverseOrder())
+		.forEach(lists -> System.out.println(lists + " "));
+	}
+	public void toUpper() {
+		
+	}
+	
 	
 }

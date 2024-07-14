@@ -93,8 +93,10 @@ public class A_HashMap {
 		int sum = 0;
 		for(String key : map.keySet()) {
 			Snack snack = map.get(key);
+			System.out.println(snack);
 			sum += snack.getCalorie();
 		}
+		
 		System.out.println("칼로리 총합 : " + sum);
 		System.out.println("칼로리 평균 : " + sum/map.size());
 		
@@ -119,7 +121,7 @@ public class A_HashMap {
 	
 	public static void main(String[] args) {
 		A_HashMap a = new A_HashMap();
-//		a.method1();
+		//a.method1();
 		a.method2();
 		
 	}
