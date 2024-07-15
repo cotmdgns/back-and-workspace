@@ -95,9 +95,15 @@ public class mypage {
 	
 	@Override
 	public String toString() {
-		return "ApplicationController [name=" + name + ", rank=" + rank + ", level=" + level + ", shortsexp="
-				+ shortsexp + ", longexp=" + longexp + ", hp=" + hp + ", attck=" + attck + ", shild=" + shild
-				+ ", healingpotion=" + healingpotion + ", gold=" + gold + "]";
+		return "이름 : " + name +"\n"+
+				"직업 : " +rank +"\n"+
+				"레벨 : " + level +"\n"+
+				"경험치 : " + shortsexp +"/"+ longexp +"\n"+
+				"체력 : " + hp +"\n"+
+				"공격력 : " + attck +"\n"+
+				"방어력 : " + shild +"\n"+
+				"물약 : " + healingpotion +"\n"+
+				"골드 : " + gold +"\n";
 	}
 	
 }

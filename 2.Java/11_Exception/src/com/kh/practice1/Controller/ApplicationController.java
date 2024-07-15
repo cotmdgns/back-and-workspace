@@ -42,6 +42,25 @@ public class ApplicationController {
 	}
 	
 	
+//	/**/
+//	public int searchBox(String sing) {		//있는지 확인 박스
+//		for(int i = 0; i<list.size(); i++) {
+//			if(list.get(i).getSing().equals(sing)) {
+//				return i;
+//			} 
+//		}
+//		return -1;
+//	}
+//	
+//	public String searchOn(String sing) { //곡 검색하기
+//
+//			int a = searchBox(sing);
+//			if(a==-1) return "없어";
+//			return list.get(a).getSing()+"-"+list.get(a).getSinger()+"을 검색 했습니다.";
+//
+//	}
+	/**/
+	
 	
 	public String searchOn(String sing) { //곡 검색하기
 		for(int i = 0; i<list.size()+1; i++) {

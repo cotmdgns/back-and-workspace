@@ -81,7 +81,12 @@ public class Application {
 		String sing = sc.nextLine();
 		System.out.print("가수 명 : ");
 		String singer = sc.nextLine();
-		System.out.println(AC.insert(sing,singer));
+		if(sing.charAt(0) !=' ') {
+			System.out.println(AC.insert(sing,singer));
+		}else {
+			System.out.println("ㅈㅅ");
+		}
+		
 	}
 	public void mainMenu2() { // 처음 위치 으로 추가할 곡
 		System.out.println("**** 첫 위치에 곡 검색 *****");
@@ -89,7 +94,11 @@ public class Application {
 		String sing = sc.nextLine();
 		System.out.print("가수 명 : ");
 		String singer = sc.nextLine();
-		System.out.println(AC.insert2(sing,singer));
+		if(sing.charAt(0) !=' ') {
+			System.out.println(AC.insert2(sing,singer));
+		}else {
+			System.out.println("ㅈㅅ");
+		}
 	}
 	public void mainMenu3() {
 		System.out.println("**** 전체 곡 목록 출력 *****");

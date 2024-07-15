@@ -21,9 +21,11 @@ public class Application {
 	}
 	public void gamemeun() {
 		System.out.print("당신의 이름을 입력해주세요 : ");
-		String name = sc.nextLine();
-//		my1.setName(sc.nextLine());
+		my1.setName(sc.nextLine());
 		
+		meun();
+	}
+	public void meun() {
 		boolean run1 = true;
 		while(run1) {
 			System.out.println("1. 게임 정보");
@@ -85,7 +87,6 @@ public class Application {
 					dungeon();		
 					break;
 				case 5:
-					gamemeun();
 					System.out.println("메인메뉴로 돌아갑니다.");
 					run2 = false;
 					break;
@@ -100,17 +101,7 @@ public class Application {
 		}
 	}
 	public void my() {
-		String rank = "전사";
-		int level = 1;
-		int shortexp = 0;
-		int longexp = 50;
-		int hp = 150;
-		int attck = 20;
-		int slied = 5;
-		int healingpotion = 0;
-		int gold = 1000;
-//		mypage my = new mypage(my1.getName(), rank, level, shortexp, longexp, hp, attck, slied, healingpotion, gold);
-//		AC.mypage(my);
+		System.out.println(my1);
 	}
 	public void moster() {
 		moster[] mo = {
@@ -120,7 +111,6 @@ public class Application {
 				new moster("방패 고블린",70,5,15,20,"벙어력은 높지만 공격력은 약하다!"),
 				};
 		for(int i=0;i<mo.length;i++	) {
-//			AC.monster(mo[i]);
 			System.out.println(mo[i]);
 		}
 	}
