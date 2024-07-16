@@ -1,13 +1,19 @@
 package com.gdgd;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class Main {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int sum = 0,num = sc.nextInt();
-		for(int i = 1; i <= num; i++) {
-			sum+=i;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			int gil = Integer.parseInt(br.readLine());
+			for(int i=0;i<gil; i++) {
+				int a = Integer.parseInt(br.readLine());
+				int b = Integer.parseInt(br.readLine());
+
+			}
+		} catch (Exception e) {
 		}
-		System.out.println(sum);
 	}
 }

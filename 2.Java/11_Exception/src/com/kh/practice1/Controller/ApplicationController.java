@@ -25,23 +25,23 @@ public class ApplicationController {
 //		if(box == -1) return "없습니다";
 	
 	public String insert(String sing, String singer) { // 마지막에 추가하기
-		for(int i = 0; i<list.size(); i++) {
-			if(list.get(i).getSing().equals(sing)) {
-				return "중복된 곡입니다";
-			}
+		int box = searchBox(sing);
+		if(box == -1) {
+			list.add(new Member(sing, singer));
+			return "추가 성공";
 		}
-		list.add(new Member(sing, singer));
-		return "추가 성공!";
+		
+		return "중복된 곡입니다!";
 	}
 
 	public String insert2(String sing, String singer) { // 처음에 추가하기
-		for(int i = 0; i<list.size(); i++) {
-			if(list.get(i).getSing().equals(sing)) {
-				return "중복된 곡입니다";
-			}
+		int box = searchBox(sing);
+		if(box == -1) {
+			list.add(0,new Member(sing, singer));
+			return "추가 성공";
 		}
-		list.add(0,new Member(sing, singer));
-		return "추가 성공!";
+		
+		return "중복된 곡입니다!";
 	}
 	public String print() { // 곡 출력
 		String a = "";
