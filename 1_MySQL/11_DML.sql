@@ -59,6 +59,7 @@ VALUES('윤유진');
 INSERT INTO emp(dept_title, emp_name)
 VALUES ('인사팀','유영민');
 
+SELECT * FROM emp;
 -- emp_name 컬럼에 not null 제약조건으로 인한 에러!
 INSERT INTO emp(dept_title)
 VALUES('마케팅팀');
