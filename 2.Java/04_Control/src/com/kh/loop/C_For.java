@@ -132,7 +132,7 @@ public class C_For {
 		}
 	}
 	
-	// 구구단 - 2단 출ㄺ
+	// 구구단 - 2단 출력
 	public void method8() {
 		for(int i=2;i<=9;i++) {
 			System.out.println("2 X " + i + " = " + 2 * i);

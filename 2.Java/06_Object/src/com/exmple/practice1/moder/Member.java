@@ -1,7 +1,7 @@
 package com.exmple.practice1.moder;
 
 public class Member {
-	// private 는 같운 클래수에서만 사용가능 (접근제한자)
+	// private 는 같은 클래스에서만 사용가능 (접근제한자)
 	private String id;
 	private String pwd;
 	private String name;

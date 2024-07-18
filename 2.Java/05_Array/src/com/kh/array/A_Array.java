@@ -72,7 +72,7 @@ public class A_Array {
 			sum +=arr[i];
 		}
 		System.out.printf("%.1f", sum / arr.length);
-		System.out.println(Arrays.toString(arr)); // 값들이 들어가있는지 문자열 확인
+		System.out.println(Arrays.toString(arr)); // 값들이 들어가있는지 문자열로 변환 후 확인
 	}
 	
 	// 배열의 복사

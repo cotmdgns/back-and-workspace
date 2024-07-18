@@ -51,11 +51,17 @@ public class Application {
 		Employee result = control.findEmployeeByName("우현성", empArr);
 		System.out.println(result);
 		
-		// 찾은 사람의 연봉은?
-		int resultAnnula = control.getAnnualSalary(result);
-		System.out.println(resultAnnula);
+//		// 찾은 사람의 연봉은?
 		
-		// 전체 총합
+		int result2 = control.getAnnualSalary(result, empArr);
+		System.out.println(result2);
+//		int resultAnnula = control.getAnnualSalary(result);
+//		System.out.println(resultAnnula);
+//		
+		System.out.println("");
+		
+//		// 전체 총합
+		
 		System.out.println(control.getTotalSalary(empArr));
 		
 	}
