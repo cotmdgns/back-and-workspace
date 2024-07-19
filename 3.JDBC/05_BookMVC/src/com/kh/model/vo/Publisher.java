@@ -1,4 +1,4 @@
-package com.kh.model;
+package com.kh.model.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -6,11 +6,10 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor
 @AllArgsConstructor
-public class Rent {
+public class Publisher {
 	
-	private int rent_no;
-	private int member_no;
-	private int bk_no;
-	private String rent_date;
+	private int pubNo;
+	private String pubName;
+	private String phone;
 	
 }

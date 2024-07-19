@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.kh.controller.BookController;
-import com.kh.model.book;
-import com.kh.model.member;
+import com.kh.controller.MemberController;
+import com.kh.model.vo.Book;
+import com.kh.model.vo.Member;
 
 // 스키마 : sample
 // 테이블 : member, book, publisher, rent
@@ -14,15 +15,15 @@ public class Application {
 
 	private Scanner sc = new Scanner(System.in);
 	// 로그인 했을 시 사용자 정보를 담는 객체!
-	private member m = new member();
-	BookController mc = new BookController();
-	book b = new book();
+	private Member member = new Member();
+	private BookController bc = new BookController();
+	private MemberController mc = new MemberController();
 	
 	public static void main(String[] args) {
 
 		Application app = new Application();
 		app.mainMenu();
-
+		
 	}
 
 	public void mainMenu() {
@@ -64,79 +65,99 @@ public class Application {
 	// 1. 전체 책 조회
 	public void printBookAll() {
 		// 반복문을 이용해서 책 리스트 출력
-		ArrayList<book> print = mc.printBookAll();
-		for(book b : print) System.out.println(b);
+		for(Book book : bc.printBookAll()) {
+			String pubName = book.getPublisher().getPubName();
+			System.out.println("책 번호 : " +book.getBkNo()+
+								" / 제목 :" + book.getBkTitle() + 
+								" / 저자 : " + book.getBkAuthor()+
+								(pubName!=null ? " / 출판사 : " + book.getPublisher().getPubName() : ""));
+		}
 	}
 
 	// 2. 책 등록
 	public void registerBook() {
-		System.out.println("책 제목을 입력해주세요 : ");
+		// 책 제목, 책 저자를 사용자한테 입력 받아
+		System.out.print("책 제목 : ");
 		String title = sc.nextLine();
-		System.out.println("책 저자을 입력해주세요 : ");
-		String auther = sc.nextLine();
-		int rebook = mc.registerBook(title,auther);
-		if(rebook == 1) {
+		System.out.print("책 저자 : ");
+		String author = sc.nextLine();
+		
+		if(bc.registerBook(title,author)) {
+			// 등록에 성공하면 "성공적으로 책을 등록했습니다." 출력
 			System.out.println("성공적으로 책을 등록했습니다.");
 		}else {
+			// 실패하면 "책을 등록하는데 실패했습니다." 출력
 			System.out.println("책을 등록하는데 실패했습니다.");
 		}
-		// 책 제목, 책 저자를 사용자한테 입력 받아
-		// 기존 제목, 저자 있으면 등록 안되게!
-		// 등록에 성공하면 "성공적으로 책을 등록했습니다." 출력
-		// 실패하면 "책을 등록하는데 실패했습니다." 출력
+		
+		
+		
+//		System.out.println("책 제목을 입력해주세요 : ");
+//		String title = sc.nextLine();
+//		System.out.println("책 저자을 입력해주세요 : ");
+//		String auther = sc.nextLine();
+//		if(mc.registerBook(title,auther)) {
+//			System.out.println("성공적으로 책을 등록했습니다.");
+//		}else {
+//			System.out.println("책을 등록하는데 실패했습니다.");
+//		}
+
 	}
 
 	// 3. 책 삭제
 	public void sellBook() {
-		ArrayList<book> print = mc.printBookAll();
-		for(book b : print) System.out.println(b);
-		System.out.println("삭제할 책 번호를 말해주세요 : ");
-		int num = Integer.parseInt(sc.nextLine());
-		int remove = mc.sellBook(num);
-		if(remove == 1) {
+		
+		// printBookAll로 전체 책 조회를 한 후
+		printBookAll();
+		System.out.print("삭제할 책 번호 : ");
+		int no = Integer.parseInt(sc.nextLine());
+		
+		if(bc.sellBook(no)) {
 			System.out.println("성공적으로 책을 삭제했습니다.");
 		}else {
 			System.out.println("책을 삭제하는데 실패했습니다.");
 		}
-		// printBookAll로 전체 책 조회를 한 후
-		// 삭제할 책 번호 선택을 사용자한테 입력 받아
-		// 삭제에 성공하면 "성공적으로 책을 삭제했습니다." 출력
-		// 실패하면 "책을 삭제하는데 실패했습니다." 출력
 	}
 
 	// 4. 회원가입
 	public void registerMember() {
-		System.out.println("아이디를 입력해주세요 : ");
+		// 아이디, 비밀번호, 이름을 사용자한테 입력 받아
+		System.out.print("아이디를 입력해주세요 : ");
 		String id = sc.nextLine();
-		System.out.println("비밀번호를 입력해주세요 : ");
+		System.out.print("비밀번호를 입력해주세요 : ");
 		String password = sc.nextLine();
-		System.out.println("이름을 입력해주세요 : ");
+		System.out.print("이름을 입력해주세요 : ");
 		String name = sc.nextLine();
-		int result = mc.registerMember(id, password, name);
-		if(result == 1) {
+		if(mc.registerMember(id,password,name)) {
+			// 회원가입에 성공하면 "성공적으로 회원가입을 완료하였습니다." 출력		
 			System.out.println("성공적으로 회원가입을 완료하였습니다.");
 		}else {
+			// 실패하면 "회원가입에 실패했습니다." 출력
 			System.out.println("회원가입에 실패했습니다.");
 		}
-		// 아이디, 비밀번호, 이름을 사용자한테 입력 받아
-		// 회원가입에 성공하면 "성공적으로 회원가입을 완료하였습니다." 출력
-		// 실패하면 "회원가입에 실패했습니다." 출력
+
+		
 	}
 
 	// 5. 로그인
 	public void login() {
-		System.out.println("아이디를 입력해주세요 : ");
-		String id = sc.nextLine();
-		System.out.println("비밀번호를 입력해주세요 : ");
-		String password = sc.nextLine();
-		String name = mc.login(id,password);
-		if(true) {
-			System.out.println(name+"님, 환영합니다!");
-			memberMenu();
-		}
 		// 아이디, 비밀번호를 사용자한테 입력 받아 
-		// 로그인에 성공하면 "~~님, 환영합니다!" 출력 후 memberMenu() 호출
-		// 로그인에 성공하면 "~~님, 환영합니다!" 출력 후
+		System.out.println("아이디 : ");
+		String id = sc.nextLine();
+		System.out.println("비밀번호 : ");
+		String password = sc.nextLine();
+		member = mc.login(id,password);
+		if(member!=null) {
+			// 로그인에 성공하면 "~~님, 환영합니다!" 출력 후 memberMenu() 호출
+			System.out.println(member.getMemberName() + "님, 환영합니다!");
+			memberMenu();
+		}else {
+			// 실패하면 "로그인에 실패했습니다." 출력
+			System.out.println("로그인에 실패했습니다");
+		}
+
+
+
 		
 		
 	}
@@ -173,11 +194,13 @@ public class Application {
 
 	// 1. 책 대여
 	public void rentBook() {
-		ArrayList<book> print = mc.printBookAll();
-		for(book b : print) System.out.println(b);
+		for(Book b : bc.printBookAll()) System.out.println(b);
+		// 같은 책을 여러 사용자가 대여할 수 있는지? 책이 1권이라고 가정!
+		// 다른 사람은 대여 못하게! 본인 분만 아니라 다른 사람도 대여 못하게!
+		// 기존 정보 삭제 후 진행
 		// printBookAll 메서드 호출하여 전체 책 조회 출력 후
 		// 대여할 책 번호 선택을 사용자한테 입력 받아
-		// 대여에 성공하면 "성공적으로 책을 대여했습니다." 출력
+		// 이미 대여한 책은 대여 불가
 		// 대여에 성공하면 "성공적으로 책을 대여했습니다." 출력
 	}
 
@@ -197,6 +220,16 @@ public class Application {
 
 	// 4. 회원탈퇴
 	public void deleteMember() {
+		System.out.println("삭제할 아이디를 입력해주세요 : ");
+		String id = sc.nextLine();
+		System.out.println("삭제할 비밀번호를 입력해주세요 : ");
+		String pwd = sc.nextLine();
+		int remove = bc.deleteMember(id, pwd);
+		if(remove == 1) {
+			System.out.println("삭제 ㅊㅊ");
+		}else {
+			System.out.println("삭제 안됨 ㄴㄴ ㅋㅋ");
+		}
 		// 회원탈퇴에 성공하면 "회원탈퇴 하였습니다 ㅠㅠ" 출력
 		// 실패하면 "회원탈퇴하는데 실패했습니다." 출력
 	}

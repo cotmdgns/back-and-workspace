@@ -7,14 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.kh.model.book;
+import com.kh.model.vo.Book;
+import com.kh.model.vo.Member;
+import com.kh.model.dao.BookDAO;
+import com.kh.model.dao.RentDAO;
 
 import config.ServerInfo;
 
 public class BookController {
-
+	
 	// 로그인 이전
-
 	// 드라이브 로딩 및 연결
 	public BookController() {
 		try {
@@ -38,100 +40,68 @@ public class BookController {
 		rs.close();
 		closeAll(ps,conn);
 	}
+
+	// 1. 전체 책 조회
+	private BookDAO book = new BookDAO();
+	private RentDAO rent = new RentDAO();
 	
-	public ArrayList<book> printBookAll() {
-		
+	public ArrayList<Book> printBookAll(){
+		//BAO 에서 넘기면 컨트롤에서 잡아줘야함 (넘기지말고)
 		try {
-			Connection conn = Connect();
-			String query = "SELECT * FROM book";
-			PreparedStatement ps1 = conn.prepareStatement(query);
-			
-			ResultSet rs = ps1.executeQuery();
-			ArrayList<book> list = new ArrayList<>();
-			
-			while(rs.next()) {
-				book b = new book();
-				b.setBk_no(rs.getInt("bk_no"));
-				b.setBk_title(rs.getString("bk_title"));
-				b.setBk_author(rs.getString("bk_author"));
-				b.setBk_price(rs.getInt("bk_price"));
-				b.setPub_no(rs.getInt("bk_pub_no"));
-				list.add(b);
+			return book.printBookAll();
+		} catch (SQLException e) {
+			return null;
+		}
+	}
+	
+	// 2. 책 등록
+	public boolean registerBook(String title,String author) {
+		//BAO 에서 넘기면 컨트롤에서 잡아줘야함 (넘기지말고)
+		try {
+			// 기존 제목, 저자 있으면 등록 안되게!
+			if(!book.checkBook(title, author)) {
+				book.registerBook(title, author);
+				return true;
 			}
-			return list;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
+		} catch (SQLException e) {}
+		return false;
 	}
 	
-	
-	public int registerBook(String title, String auther) {
+	// 3. 책 삭제
+	public boolean sellBook(int no) {
+
 		try {
-			Connection conn = Connect();
-			String query = "INSERT INTO book (bk_title,bk_author) VALUES (? , ? )";
-			PreparedStatement ps1 = conn.prepareStatement(query);
-
-			ps1.setString(1, title);
-			ps1.setString(2, auther);
-
-			int result = ps1.executeUpdate();
-			return result;
+			// 빌려있는 책 삭제 못하게!
+			if(rent.checkRentBook(no)) {
+				return false;
+			}
+			// 없는 번호 삭제하려고 하면 실패가 떠야지 정상
+			// --> 기존 책들 중에 해당 no가 없는 경우!
+			// --> 기존 책들 중에 해당 no가 있는 경우만 삭제
+			for(Book b : book.printBookAll()){
+				if(b.getBkNo() == no) {
+					book.sellBook(no);
+					return true;
+				}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return 0;
+		return false;
 	}
 	
 	
-	public int sellBook(int num) {
-		try {
-			Connection conn = Connect();
-			String query = "DELETE  FROM book WHERE bk_no = ?";
-			PreparedStatement ps1 = conn.prepareStatement(query);
-			ps1.setInt(1, num);
-			
-			int result = ps1.executeUpdate();
 	
-			return result;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
-	}
-	public int registerMember(String id, String password, String name) {
-		try {
-			Connection conn = Connect();
-			String query = "INSERT INTO member(member_id,member_pwd,member_name) VALUES (?,?,?)";
-			PreparedStatement ps1 = conn.prepareStatement(query);
-			ps1.setString(1, id);
-			ps1.setString(2, password);
-			ps1.setString(3, name);
-			
-			int result = ps1.executeUpdate();
-			return result;
-		} catch (SQLException e) {
-			return 0;
-		}
-	}
-	public String login(String name, String pwd) {
-		try {
-			Connection conn = Connect();
-			String query = "SELCET * FROM member WHERE member_id = ? AND member_pwd = ? ";
-			PreparedStatement ps1 = conn.prepareStatement(query);
-
-			int result = ps1.executeUpdate();
-			
-			return null;
-		} catch (SQLException e) {
-			return null;
-		}
-	}
+	
+		
+		
+	
 	
 	// 로그인 이후
-	
 	public void rentBook() {
-			
+		
+		
+		
 	}
 	public void printRentBook() {
 		
@@ -139,7 +109,21 @@ public class BookController {
 	public void deleteRent() {
 		
 	}
-	public void deleteMember() {
-		
+	public int deleteMember(String id, String pwd) {
+		try {
+			Connection conn = Connect();
+			String query = "DELECT FROM member WHERE member_id = ? AND WHERE member_pwd =?";
+			PreparedStatement ps1 = conn.prepareStatement(query);
+			ps1.setString(1, id);
+			ps1.setString(1, pwd);
+			int result = ps1.executeUpdate();
+			if(result == 1) {
+				return result;
+			}else {
+				return 0;
+			}
+		} catch (SQLException e) {
+			return 0;
+		}
 	}
 }
