@@ -1,14 +1,14 @@
-package com.kh.array.practice2.model;
+package com.gdgd.controller;
 
-public class MemberController2 {
+
 	
-	
-	
+public class Controller {
 	
 	public void insertMember() {
 		
 	}
 	
+
 	public void updateMember() {
 		
 	}

@@ -122,7 +122,7 @@ public class A_String {
 		sb.insert(1, "eeeee");
 		
 		// 3. delete(int Start, int end) : StringBuilder
-		//    Start에서 end-1까지 인ㄷ덱수에 해당하는 문자열 삭제
+		//    Start에서 end-1까지 인덱스에 해당하는 문자열 삭제
 		sb.delete(1, 6);
 		System.out.println(sb);
 		
@@ -131,7 +131,7 @@ public class A_String {
 		sb.reverse();
 		System.out.println(sb);
 		
-		// 메서드 체이닝 : 메서드를 이어서 쓸 수 ㅣ있다!
+		// 메서드 체이닝 : 메서드를 이어서 쓸 수 있다!
 		StringBuilder sb2 = new StringBuilder("Java Progrem");
 		sb2.delete(5,12).append("API").reverse();
 		
