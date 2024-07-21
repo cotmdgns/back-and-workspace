@@ -120,7 +120,7 @@ public class A_String {
 		// 2. insert(inf offset, String str) : StringBuilder
 		//    문자열의 offset 위치부터 전달받은 문자열 추가
 		sb.insert(1, "eeeee");
-		
+		System.out.println(sb);
 		// 3. delete(int Start, int end) : StringBuilder
 		//    Start에서 end-1까지 인덱스에 해당하는 문자열 삭제
 		sb.delete(1, 6);
@@ -179,8 +179,8 @@ public class A_String {
 		A_String a = new A_String();
 //		a.method1();
 //		a.method2();
-//		a.method3();
-		a.method4();
+		a.method3();
+//		a.method4();
 		
 	}
 

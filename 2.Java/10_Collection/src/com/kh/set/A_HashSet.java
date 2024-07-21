@@ -69,8 +69,8 @@ public class A_HashSet {
 	
 	public static void main(String[] args) {
 		A_HashSet a = new A_HashSet();
-//		a.method1();
-		a.method2();
+		a.method1();
+//		a.method2();
 	}
 
 }

@@ -19,7 +19,7 @@ public class DBConnectionTest1 {
 			System.out.println("1. 드라이버 로딩...!");
 			
 			// 2. 데이터베이스와 연결
-			Connection conn =DriverManager.getConnection("jdbc:mysql://localhost:3306/kh","root","qwer1234");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kh","root","qwer1234");
 			// 연결      변수                 얻다 연결
 			System.out.println("2. 데이터베이스와 연결...!");
 			
