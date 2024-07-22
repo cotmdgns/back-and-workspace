@@ -12,18 +12,20 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Main m = new Main();
-		int start_num = 10;
-		int end_num = 3;
-		System.out.println(Arrays.toString(m.solution(start_num,end_num)));
+		String[] my_string ={"progressive", "hamburger", "hammer", "ahocorasick"};
+		int[][] parts = {{0, 4},{1, 2},{3, 5},{7,7}};
+		System.out.println(m.solution(my_string,parts));
 	}
 	
-	public int[] solution(int n, int k) {
-        int[] answer = new int[n/k];
-        int count =0;
-        for(int i = 1;i<=n;i++) {
-        	if(i % k == 0) {
-        		answer[count++] += i;
+	public String solution(String[] my_strings, int[][] parts) {
+        String answer = "";
+        String[] str = my_strings;
+        int count = 0;
+        for(int i=0;i<parts.length;i++) {
+        	for(int j=0;j<parts[i].length;j++) {
+        		System.out.println(j);
         	}
+        	System.out.println();
         }
         return answer;
     }
