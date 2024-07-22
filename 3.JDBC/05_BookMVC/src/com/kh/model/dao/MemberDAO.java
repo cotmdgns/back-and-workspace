@@ -65,4 +65,16 @@ public class MemberDAO {
 		closeAll(rs,ps,conn);
 		return member;
 	}
+	
+	// 5. 회원탈퇴
+	public int deleteMember(int memberNo) throws SQLException {
+		Connection conn = Connect();
+		String query = "DELETE FROM member WHERE member_no = ?";
+		PreparedStatement ps = conn.prepareStatement(query);
+		ps.setInt(1, memberNo);
+		int result = ps.executeUpdate();
+		closeAll(ps, conn);
+		return result;
+	}
+
 }

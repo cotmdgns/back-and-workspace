@@ -11,13 +11,21 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		int[] num_list = {5, 2, 1, 7, 5};
-		int n = 2;
-	
-		int[] answer = new int[num_list.length-(n-1)];
-
-		System.arraycopy(num_list,n-1,answer,0,num_list.length-(n-1));
-		System.out.println(Arrays.toString(answer));
+		Main m = new Main();
+		int start_num = 10;
+		int end_num = 3;
+		System.out.println(Arrays.toString(m.solution(start_num,end_num)));
 	}
+	
+	public int[] solution(int n, int k) {
+        int[] answer = new int[n/k];
+        int count =0;
+        for(int i = 1;i<=n;i++) {
+        	if(i % k == 0) {
+        		answer[count++] += i;
+        	}
+        }
+        return answer;
+    }
 }
 

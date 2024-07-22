@@ -163,6 +163,9 @@ CREATE TABLE rent(
     rent_book_no int,
     rent_date date default (current_date)
 );
+
+DROP TABLE rent;
+SELECT * FROM rent;
 alter table rent add constraint member_no_fk
 	foreign key(rent_mem_no) references member(member_no) on delete set null;
 alter table rent add constraint book_no_fk

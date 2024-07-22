@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Data @NoArgsConstructor
 @AllArgsConstructor
 public class Rent {
+	
 	public int rentNo;
 	public int rentMemBo;
-	public int rentBookNo;
+	public Book book;
 	public Date rentDate;
+	
 }
