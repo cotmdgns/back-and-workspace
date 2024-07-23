@@ -64,5 +64,4 @@ SELECT * FROM rent WHERE rent_mem_no = ?;
 SELECT * FROM rent WHERE rent_book_no =3;
 DELETE FROM book;
 
-
-;
+SELECT * FROM member WHERE name = "2";

@@ -12,20 +12,15 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Main m = new Main();
-		String[] my_string ={"progressive", "hamburger", "hammer", "ahocorasick"};
-		int[][] parts = {{0, 4},{1, 2},{3, 5},{7,7}};
-		System.out.println(m.solution(my_string,parts));
+		String my_string ="cvsgiorszzzmrpaqpe";
+		int[] index_list = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
+		System.out.println(m.solution(my_string,index_list));
 	}
 	
-	public String solution(String[] my_strings, int[][] parts) {
+	public String solution(String my_string, int[] index_list) {
         String answer = "";
-        String[] str = my_strings;
-        int count = 0;
-        for(int i=0;i<parts.length;i++) {
-        	for(int j=0;j<parts[i].length;j++) {
-        		System.out.println(j);
-        	}
-        	System.out.println();
+        for(int i =0;i<my_string.length();i++) {
+        	
         }
         return answer;
     }

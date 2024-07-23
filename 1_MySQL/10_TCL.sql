@@ -70,4 +70,5 @@ ROLLBACK;
 
 COMMIT;
 
-SELECT * FROM emp_salary;
+INSERT INTO member(id,password,name) VALUES (?, ?, ?);
+SELECT * FROM member;
