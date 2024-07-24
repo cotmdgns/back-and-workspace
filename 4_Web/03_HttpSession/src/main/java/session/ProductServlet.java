@@ -10,29 +10,23 @@ import model.vo.Member;
 
 import java.io.IOException;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/product")
+public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 폼 값 받는다.
-		String id = request.getParameter("id");
-		String pwd = request.getParameter("password");
 		
-		// DAO 생략.. 로그인 성공했다 가정!
-		
-		Member member = new Member(id,pwd,"테스트");
-		
-		// HttpSession (클래스 이름)
-		// 1) 세션을 하나 받아온다
+		// 1. 세션 받아온다.
 		HttpSession session = request.getSession();
 		
-		// 2) 세션에 바인딩
-		session.setAttribute("info", member);
+		// 2. 세션에 바인딩 된 값이 있다면 그 값을 찾아온다.
+		Member member = (Member) session.getAttribute("info");
 		
-		// 네비게이션
-		response.sendRedirect("product");
+		request.setAttribute("product", "notebook");
+		
+//		System.out.println(member);
+//		response.sendRedirect("cart");
+		request.getRequestDispatcher("cart").forward(request, response);
 	}
 
 }

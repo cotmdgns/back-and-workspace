@@ -7,16 +7,23 @@ import java.io.OutputStreamWriter;
 
 public class main {
 	public static void main(String[] args) {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter br2 = new BufferedWriter(new OutputStreamWriter(System.out)); 
-		try {
-			int gil = Integer.parseInt(br.readLine());
-			for(int i=0;i<gil; i++) {
-				int a = Integer.parseInt(br.readLine());
-				int b = Integer.parseInt(br.readLine());
-				System.out.println(a + b);
-			}
-		} catch (Exception e) {
-		}
+		
+		main m = new main();
+		int a = 2;
+		int b = 91;
+		System.out.println(m.solution(a, b));
 	}
+
+	
+	public int solution(int a, int b) {
+        int answer = 0;
+        String numStr = String.valueOf(a) + b;
+        int num = 2 * a * b;
+        System.out.println(numStr);
+        System.out.println(num);
+//        if(num > numStr) {
+//        	
+//        }
+        return answer;
+    }
 }

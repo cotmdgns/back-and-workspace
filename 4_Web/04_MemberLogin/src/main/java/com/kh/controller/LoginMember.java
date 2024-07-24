@@ -1,4 +1,4 @@
-package session;
+package com.kh.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,33 +6,33 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import model.vo.Member;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+import com.kh.model.dao.MemberDAO;
+import com.kh.model.vo.Member;
+
+@WebServlet("/views/login")
+public class LoginMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 폼 값 받는다.
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("password");
 		
-		// DAO 생략.. 로그인 성공했다 가정!
+		MemberDAO mdao = new MemberDAO();
+		Boolean check = false;
+		try {
+			check = mdao.loginMember(id, pwd);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		Member member = new Member(id,pwd,"테스트");
-		
-		// HttpSession (클래스 이름)
-		// 1) 세션을 하나 받아온다
 		HttpSession session = request.getSession();
 		
-		// 2) 세션에 바인딩
-		session.setAttribute("info", member);
-		
-		// 네비게이션
-		response.sendRedirect("product");
+		session.setAttribute("check", check);
+		response.sendRedirect("/index.jsp");
 	}
-
 }
