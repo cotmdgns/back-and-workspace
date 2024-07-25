@@ -4,26 +4,20 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Scanner;
 
 public class main {
 	public static void main(String[] args) {
 		
 		main m = new main();
-		int a = 2;
-		int b = 91;
-		System.out.println(m.solution(a, b));
+		String myString ="oxooxoxxox";
+        
+		System.out.println(m.solution(myString));
 	}
 
 	
-	public int solution(int a, int b) {
-        int answer = 0;
-        String numStr = String.valueOf(a) + b;
-        int num = 2 * a * b;
-        System.out.println(numStr);
-        System.out.println(num);
-//        if(num > numStr) {
-//        	
-//        }
+	public int[] solution(String myString) {
+        int[] answer = {};
         return answer;
     }
 }
