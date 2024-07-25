@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% HttpSession session1 = request.getSession(); %>
-<% session1.setAttribute("check", false);%>
-<% response.sendRedirect("/index.jsp"); %>
+	<form action="choose5_view.jsp">
+		숫자 : <input type="text" name="number">
+		<input type="submit" value="전송">
+	</form>
 </body>
 </html>

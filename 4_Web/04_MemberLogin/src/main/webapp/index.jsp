@@ -1,3 +1,4 @@
+<%@page import="com.kh.model.vo.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,11 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% Boolean check = (Boolean) session.getAttribute("check"); %>
-
+	<!% Boolean check = (Boolean) session.getAttribute("check"); %>
+ 	<!% if(check!=null && check){ %>
+ 	<!% }else{ %> 
+ 	<!% } %>
+ 	
+ 	
+ 	<%Member member = (Member) session.getAttribute("member"); %>
 	<h1>회원 관리 기능</h1>
-	
-	<% if(check!=null && check){ %>
+	<% if(member!=null){ %>
 	<ul>
 		<!-- 로그인 된 경우 -->
 		<li><a href="/views/search.jsp">회원검색</a></li>
@@ -20,13 +25,13 @@
 					SearchServlet
 					성공하면 views/search_ok.jsp 해당 정보 출력
 					실패하면 views/serach_fail.jsp "검색 실패했습니다" 출력 -->
-		<li><a href="/views/allMember">전체회원보기</a></li>
+		<li><a href="/allMember">전체회원보기</a></li>
 		<!-- 전체회원보기 : views/allMember.jsp에 리스트 출력 -->
-		<li><a href="/views/logout.jsp">로그아웃</a></li>
+		<li><a href="/logout">로그아웃</a></li>
 		<!--  로그아웃 : 로그아웃하고 index.jsp로! -->
 	</ul>
-		
-	<% }else{ %> 
+	<% }else{ %> 	
+
 	<ul>
 		<!-- 로그인 되어 있지 않는 경우 -->
 		<li><a href="/views/register.jsp">회원가입</a></li>

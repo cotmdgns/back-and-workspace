@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import com.kh.model.dao.MemberDAO;
 import com.kh.model.vo.Member;
 
-@WebServlet("/views/login")
+@WebServlet("/login")
 public class LoginMember extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,17 +22,29 @@ public class LoginMember extends HttpServlet {
 		String pwd = request.getParameter("password");
 		
 		MemberDAO mdao = new MemberDAO();
-		Boolean check = false;
 		try {
-			check = mdao.loginMember(id, pwd);
+			Member member = mdao.login(id, pwd);
+			
+			// 바인딩 Session
+			HttpSession session = request.getSession();
+			session.setAttribute("member", member);
+			
+			response.sendRedirect("/index.jsp");
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		HttpSession session = request.getSession();
-		
-		session.setAttribute("check", check);
-		response.sendRedirect("/index.jsp");
+		// 내가 한거
+//		Boolean check = false;
+//		try {
+//			check = mdao.loginMember(id, pwd);
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		HttpSession session = request.getSession();
+//		session.setAttribute("check", check);
+//		response.sendRedirect("/index.jsp");
 	}
 }
