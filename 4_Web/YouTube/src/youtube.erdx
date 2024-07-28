@@ -1,0 +1,260 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<e:Document xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cubrid="http://exerd.tomato.com/cubrid/model" xmlns:e="http://exerd.tomato.com/model" UUID="Document_P0UmcEpFEe-T4Y8RQTqW8A" activeBusinessArea="BArea_P0VNjkpFEe-T4Y8RQTqW8A" activeSchema="Schema_P0VNkUpFEe-T4Y8RQTqW8A" version="3.3.43.20240716-1514" modelVersion="3.0.0.20190111-1604" productId="com.tomato.db.cubrid" openedDiagrams="Diagram_P0VNj0pFEe-T4Y8RQTqW8A">
+  <relationManager>
+    <relation key="FKCGroup_dVFG60pOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFG60pOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFG7UpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFG7UpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFtsEpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFtsEpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFtskpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFtskpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFG2EpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFG2EpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFG2kpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFG2kpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFGtUpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFGtUpOEe-T4Y8RQTqW8A"/>
+    </relation>
+    <relation key="FKCGroup_dVFGxUpOEe-T4Y8RQTqW8A">
+      <value foreignKeyColumnGroup="FKCGroup_dVFGxUpOEe-T4Y8RQTqW8A"/>
+    </relation>
+  </relationManager>
+  <configuration>
+    <domainDefinition UUID="DDefinition_P0VNgEpFEe-T4Y8RQTqW8A">
+      <domain UUID="Domain_P0VNgUpFEe-T4Y8RQTqW8A" name="문자" suggestedDataType="VARCHAR(255)">
+        <domain UUID="Domain_P0VNgkpFEe-T4Y8RQTqW8A" name="주민등록번호" suggestedDataType="VARCHAR(13)"/>
+        <domain UUID="Domain_P0VNg0pFEe-T4Y8RQTqW8A" name="주소"/>
+        <domain UUID="Domain_P0VNhEpFEe-T4Y8RQTqW8A" name="웹주소"/>
+        <domain UUID="Domain_P0VNhUpFEe-T4Y8RQTqW8A" name="전화번호" suggestedDataType="VARCHAR(30)"/>
+        <domain UUID="Domain_P0VNhkpFEe-T4Y8RQTqW8A" name="이메일" suggestedDataType="VARCHAR(40)"/>
+        <domain UUID="Domain_P0VNh0pFEe-T4Y8RQTqW8A" name="이름" suggestedDataType="VARCHAR(50)"/>
+      </domain>
+      <domain UUID="Domain_P0VNiEpFEe-T4Y8RQTqW8A" name="숫자" suggestedDataType="INTEGER">
+        <domain UUID="Domain_P0VNiUpFEe-T4Y8RQTqW8A" name="금액"/>
+      </domain>
+      <domain UUID="Domain_P0VNikpFEe-T4Y8RQTqW8A" name="일시" suggestedDataType="DATE"/>
+      <domain UUID="Domain_P0VNi0pFEe-T4Y8RQTqW8A" name="객체">
+        <domain UUID="Domain_P0VNjEpFEe-T4Y8RQTqW8A" name="이미지" suggestedDataType=""/>
+        <domain UUID="Domain_P0VNjUpFEe-T4Y8RQTqW8A" name="오디오"/>
+      </domain>
+    </domainDefinition>
+    <viewSettingsPreset name="eXERD 기본" showAltTableName="false">
+      <cellsToShow>name</cellsToShow>
+      <cellsToShow>domain</cellsToShow>
+      <cellsToShow>dataType</cellsToShow>
+    </viewSettingsPreset>
+    <viewSettingsPreset name="엔티티 모드" showAltTableName="false">
+      <cellsToShow>name</cellsToShow>
+      <cellsToShow>domain</cellsToShow>
+    </viewSettingsPreset>
+    <viewSettingsPreset name="E-R 개요 모드" columnFilter="tableOnly" showTableComment="true">
+      <cellsToShow>name</cellsToShow>
+      <cellsToShow>domain</cellsToShow>
+      <cellsToShow>dataType</cellsToShow>
+    </viewSettingsPreset>
+    <viewSettingsPreset showColumnHeader="true" name="논리/물리 동시편집">
+      <cellsToShow>name</cellsToShow>
+      <cellsToShow>oppositeModeName</cellsToShow>
+      <cellsToShow>domain</cellsToShow>
+      <cellsToShow>dataType</cellsToShow>
+      <cellsToShow>nullable</cellsToShow>
+    </viewSettingsPreset>
+  </configuration>
+  <businessAreas UUID="BArea_P0VNjkpFEe-T4Y8RQTqW8A" logicalName="기본 업무영역" physicalName="DEFAULT_AREA" tables="Table_dVEflkpOEe-T4Y8RQTqW8A Table_dVFGo0pOEe-T4Y8RQTqW8A Table_dVFGt0pOEe-T4Y8RQTqW8A Table_dVFGx0pOEe-T4Y8RQTqW8A Table_dVFG3EpOEe-T4Y8RQTqW8A Table_dVFG70pOEe-T4Y8RQTqW8A Table_u1EAIEtBEe-UGZIz4VPoSQ">
+    <diagrams UUID="Diagram_P0VNj0pFEe-T4Y8RQTqW8A" logicalName="다이어그램" physicalName="diagram">
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkEpOEe-T4Y8RQTqW8A" location="Point(-20.0, 17.0)" table="Table_dVEflkpOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkUpOEe-T4Y8RQTqW8A" location="Point(394.0, 27.0)" table="Table_dVFGo0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkkpOEe-T4Y8RQTqW8A" location="Point(170.0, 4.0)" table="Table_dVFGt0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfk0pOEe-T4Y8RQTqW8A" location="Point(15.0, 286.0)" table="Table_dVFGx0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflEpOEe-T4Y8RQTqW8A" location="Point(394.0, 326.0)" table="Table_dVFG3EpOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflUpOEe-T4Y8RQTqW8A" location="Point(196.0, 326.0)" table="Table_dVFG70pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_u1QNYEtBEe-UGZIz4VPoSQ" location="Point(694.0, 259.0)" table="Table_u1EAIEtBEe-UGZIz4VPoSQ"/>
+      <viewSettings showAltTableName="false">
+        <cellsToShow>name</cellsToShow>
+        <cellsToShow>domain</cellsToShow>
+        <cellsToShow>dataType</cellsToShow>
+      </viewSettings>
+      <printSettings marginTop="10" marginRight="10" marginBottom="10" marginLeft="10" paperKind="A4" paperOrientation="landscape" header="${FILE} - ${DIAGRAM} - ${PAGENUM} / ${FULLPAGE}" footter="${YEAR}-${MONTH}-${DAY} ${HOUR}:${DAY}"/>
+    </diagrams>
+  </businessAreas>
+  <databaseModel UUID="DModel_P0VNkEpFEe-T4Y8RQTqW8A" logicalName="새 데이터베이스" physicalName="NEW_DATABASE">
+    <schema UUID="Schema_P0VNkUpFEe-T4Y8RQTqW8A" logicalName="내 스키마" physicalName="MY_SCHEMA">
+      <tables UUID="Table_dVEflkpOEe-T4Y8RQTqW8A" logicalName="회원" physicalName="TABLE">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVEfl0pOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVEfmEpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVEfmUpOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVEfmkpOEe-T4Y8RQTqW8A" logicalName="회원 아이디" physicalName="COL">
+          <memberships UUID="MEntry_dVEfm0pOEe-T4Y8RQTqW8A" key="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVEfnEpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A" entryIndex="0"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVEfnUpOEe-T4Y8RQTqW8A" logicalName="회원 비밀번호" physicalName="COL2"/>
+        <columns UUID="Column_dVEfnkpOEe-T4Y8RQTqW8A" logicalName="회원 이메일" physicalName="COL3"/>
+        <columns UUID="Column_dVFGoEpOEe-T4Y8RQTqW8A" logicalName="회원 전화번호" physicalName="COL4"/>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A" logicalName="회원 기본키" physicalName="PK_TABLE" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFGokpOEe-T4Y8RQTqW8A" logicalName="회원 기본키" physicalName="PK_TABLE" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_dVFGo0pOEe-T4Y8RQTqW8A" logicalName="동영상" physicalName="TABLE2">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVFGpEpOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVFGpUpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVFGpkpOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVFGp0pOEe-T4Y8RQTqW8A" logicalName="동영상 코드" physicalName="COL">
+          <memberships UUID="MEntry_dVFGqEpOEe-T4Y8RQTqW8A" key="PKCGroup_dVFGs0pOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVFGqUpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFGs0pOEe-T4Y8RQTqW8A" entryIndex="0"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFGqkpOEe-T4Y8RQTqW8A" logicalName="동영상 파일주소" physicalName="COL2"/>
+        <columns UUID="Column_dVFGq0pOEe-T4Y8RQTqW8A" logicalName="동영상 썸네일주소" physicalName="COL3"/>
+        <columns UUID="Column_dVFGrEpOEe-T4Y8RQTqW8A" logicalName="동영상 제목" physicalName="COL4"/>
+        <columns UUID="Column_dVFGrUpOEe-T4Y8RQTqW8A" logicalName="동영상 조회수" physicalName="COL5"/>
+        <columns UUID="Column_dVFGrkpOEe-T4Y8RQTqW8A" logicalName="동영상 업로드날짜" physicalName="COL6"/>
+        <columns UUID="Column_dVFGr0pOEe-T4Y8RQTqW8A" logicalName="동영상 설명" physicalName="COL7"/>
+        <columns UUID="Column_dVFGsEpOEe-T4Y8RQTqW8A" logicalName="채널 코드" physicalName="COL8" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFGsUpOEe-T4Y8RQTqW8A" key="FKCGroup_dVFGtUpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFGskpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFGtUpOEe-T4Y8RQTqW8A" parentColumn="Column_dVFGu0pOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFGs0pOEe-T4Y8RQTqW8A" logicalName="동영상 기본키" physicalName="PK_TABLE2" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFGtEpOEe-T4Y8RQTqW8A" logicalName="동영상 기본키" physicalName="PK_TABLE2" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFGtUpOEe-T4Y8RQTqW8A" logicalName="채널 -> 동영상" physicalName="FK_TABLE3_TO_TABLE2" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGw0pOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFGtkpOEe-T4Y8RQTqW8A" logicalName="채널 -> 동영상" physicalName="FK_TABLE3_TO_TABLE2" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_dVFGt0pOEe-T4Y8RQTqW8A" logicalName="채널" physicalName="TABLE3">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVFGuEpOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVFGuUpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVFGukpOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVFGu0pOEe-T4Y8RQTqW8A" logicalName="채널 코드" physicalName="COL">
+          <memberships UUID="MEntry_dVFGvEpOEe-T4Y8RQTqW8A" key="PKCGroup_dVFGw0pOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVFGvUpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFGw0pOEe-T4Y8RQTqW8A" entryIndex="0"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFGvkpOEe-T4Y8RQTqW8A" logicalName="회원 아이디" physicalName="COL4" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFGv0pOEe-T4Y8RQTqW8A" key="FKCGroup_dVFGxUpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFGwEpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFGxUpOEe-T4Y8RQTqW8A" parentColumn="Column_dVEfmkpOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFGwUpOEe-T4Y8RQTqW8A" logicalName="채널 이미지 주소" physicalName="COL2"/>
+        <columns UUID="Column_dVFGwkpOEe-T4Y8RQTqW8A" logicalName="채널 이름" physicalName="COL3"/>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFGw0pOEe-T4Y8RQTqW8A" logicalName="채널 기본키" physicalName="PK_TABLE3" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFGxEpOEe-T4Y8RQTqW8A" logicalName="채널 기본키" physicalName="PK_TABLE3" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFGxUpOEe-T4Y8RQTqW8A" logicalName="회원 -> 채널" physicalName="FK_TABLE_TO_TABLE3" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFGxkpOEe-T4Y8RQTqW8A" logicalName="회원 -> 채널" physicalName="FK_TABLE_TO_TABLE3" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_dVFGx0pOEe-T4Y8RQTqW8A" logicalName="댓글" physicalName="TABLE4">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVFGyEpOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVFGyUpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVFGykpOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVFGy0pOEe-T4Y8RQTqW8A" logicalName="댓글 코드" physicalName="COL">
+          <memberships UUID="MEntry_dVFGzEpOEe-T4Y8RQTqW8A" key="PKCGroup_dVFG1kpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVFGzUpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFG1kpOEe-T4Y8RQTqW8A" entryIndex="0"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFGzkpOEe-T4Y8RQTqW8A" logicalName="댓글 내용" physicalName="COL2"/>
+        <columns UUID="Column_dVFGz0pOEe-T4Y8RQTqW8A" logicalName="댓글 날짜" physicalName="COL4"/>
+        <columns UUID="Column_dVFG0EpOEe-T4Y8RQTqW8A" logicalName="회원 아이디" physicalName="COL5" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG0UpOEe-T4Y8RQTqW8A" key="FKCGroup_dVFG2EpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG0kpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFG2EpOEe-T4Y8RQTqW8A" parentColumn="Column_dVEfmkpOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFG00pOEe-T4Y8RQTqW8A" logicalName="동영상 코드" physicalName="COL3" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG1EpOEe-T4Y8RQTqW8A" key="FKCGroup_dVFG2kpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG1UpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFG2kpOEe-T4Y8RQTqW8A" parentColumn="Column_dVFGp0pOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFG1kpOEe-T4Y8RQTqW8A" logicalName="댓글 기본키" physicalName="PK_TABLE4" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFG10pOEe-T4Y8RQTqW8A" logicalName="댓글 기본키" physicalName="PK_TABLE4" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFG2EpOEe-T4Y8RQTqW8A" logicalName="회원 -> 댓글" physicalName="FK_TABLE_TO_TABLE4" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFG2UpOEe-T4Y8RQTqW8A" logicalName="회원 -> 댓글" physicalName="FK_TABLE_TO_TABLE4" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFG2kpOEe-T4Y8RQTqW8A" logicalName="동영상 -> 댓글" physicalName="FK_TABLE2_TO_TABLE4" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGs0pOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFG20pOEe-T4Y8RQTqW8A" logicalName="동영상 -> 댓글" physicalName="FK_TABLE2_TO_TABLE4" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_dVFG3EpOEe-T4Y8RQTqW8A" logicalName="좋아요" physicalName="TABLE5">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVFG3UpOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVFG3kpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVFG30pOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVFG4EpOEe-T4Y8RQTqW8A" logicalName="좋아요 코드" physicalName="COL">
+          <memberships UUID="MEntry_dVFG4UpOEe-T4Y8RQTqW8A" key="PKCGroup_dVFG6UpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVFG4kpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFG6UpOEe-T4Y8RQTqW8A" entryIndex="0"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFG40pOEe-T4Y8RQTqW8A" logicalName="회원 아이디" physicalName="COL4" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG5EpOEe-T4Y8RQTqW8A" key="FKCGroup_dVFG60pOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG5UpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFG60pOEe-T4Y8RQTqW8A" parentColumn="Column_dVEfmkpOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFG5kpOEe-T4Y8RQTqW8A" logicalName="동영상 코드" physicalName="COL2" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG50pOEe-T4Y8RQTqW8A" key="FKCGroup_dVFG7UpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG6EpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFG7UpOEe-T4Y8RQTqW8A" parentColumn="Column_dVFGp0pOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFG6UpOEe-T4Y8RQTqW8A" logicalName="좋아요 기본키" physicalName="PK_TABLE5" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFG6kpOEe-T4Y8RQTqW8A" logicalName="좋아요 기본키" physicalName="PK_TABLE5" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFG60pOEe-T4Y8RQTqW8A" logicalName="회원 -> 좋아요" physicalName="FK_TABLE_TO_TABLE5" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFG7EpOEe-T4Y8RQTqW8A" logicalName="회원 -> 좋아요" physicalName="FK_TABLE_TO_TABLE5" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFG7UpOEe-T4Y8RQTqW8A" logicalName="동영상 -> 좋아요" physicalName="FK_TABLE2_TO_TABLE5" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGs0pOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFG7kpOEe-T4Y8RQTqW8A" logicalName="동영상 -> 좋아요" physicalName="FK_TABLE2_TO_TABLE5" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_dVFG70pOEe-T4Y8RQTqW8A" logicalName="구독" physicalName="TABLE6">
+        <physicalProperties xsi:type="cubrid:TableProperties" UUID="TProperties_dVFG8EpOEe-T4Y8RQTqW8A">
+          <partition UUID="Partition_dVFG8UpOEe-T4Y8RQTqW8A">
+            <partitionAlgorithm UUID="PAlgorithm_dVFG8kpOEe-T4Y8RQTqW8A"/>
+          </partition>
+        </physicalProperties>
+        <columns UUID="Column_dVFG80pOEe-T4Y8RQTqW8A" logicalName="구독 코드" physicalName="COL2">
+          <memberships UUID="MEntry_dVFG9EpOEe-T4Y8RQTqW8A" key="PKCGroup_dVFG_EpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:PrimaryKeyMembership" UUID="PKMembership_dVFG9UpOEe-T4Y8RQTqW8A" group="PKCGroup_dVFG_EpOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFG9kpOEe-T4Y8RQTqW8A" logicalName="회원 아이디" physicalName="COL4" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG90pOEe-T4Y8RQTqW8A" key="FKCGroup_dVFtsEpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG-EpOEe-T4Y8RQTqW8A" group="FKCGroup_dVFtsEpOEe-T4Y8RQTqW8A" parentColumn="Column_dVEfmkpOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columns UUID="Column_dVFG-UpOEe-T4Y8RQTqW8A" logicalName="채널 코드" physicalName="COL" derivedPhysicalName="true" derivedLogicalName="true">
+          <memberships UUID="MEntry_dVFG-kpOEe-T4Y8RQTqW8A" key="FKCGroup_dVFtskpOEe-T4Y8RQTqW8A">
+            <value xsi:type="e:ColumnReference" UUID="CReference_dVFG-0pOEe-T4Y8RQTqW8A" group="FKCGroup_dVFtskpOEe-T4Y8RQTqW8A" parentColumn="Column_dVFGu0pOEe-T4Y8RQTqW8A"/>
+          </memberships>
+        </columns>
+        <columnGroups xsi:type="e:PrimaryKeyColumnGroup" UUID="PKCGroup_dVFG_EpOEe-T4Y8RQTqW8A" logicalName="구독 기본키" physicalName="PK_TABLE6" derivedPhysicalName="true" derivedLogicalName="true">
+          <primaryKeyConstraint UUID="PKConstraint_dVFG_UpOEe-T4Y8RQTqW8A" logicalName="구독 기본키" physicalName="PK_TABLE6" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFtsEpOEe-T4Y8RQTqW8A" logicalName="회원 -> 구독" physicalName="FK_TABLE_TO_TABLE6" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGoUpOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFtsUpOEe-T4Y8RQTqW8A" logicalName="회원 -> 구독" physicalName="FK_TABLE_TO_TABLE6" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+        <columnGroups xsi:type="e:ForeignKeyColumnGroup" UUID="FKCGroup_dVFtskpOEe-T4Y8RQTqW8A" logicalName="채널 -> 구독" physicalName="FK_TABLE3_TO_TABLE6" derivedPhysicalName="true" derivedLogicalName="true" parentColumnGroup="PKCGroup_dVFGw0pOEe-T4Y8RQTqW8A">
+          <foreignKeyConstraint UUID="FKConstraint_dVFts0pOEe-T4Y8RQTqW8A" logicalName="채널 -> 구독" physicalName="FK_TABLE3_TO_TABLE6" derivedPhysicalName="true" derivedLogicalName="true"/>
+        </columnGroups>
+      </tables>
+      <tables UUID="Table_u1EAIEtBEe-UGZIz4VPoSQ" logicalName="test" physicalName="TABLE7"/>
+    </schema>
+  </databaseModel>
+  <sharedIcons UUID="SIcons_P0VNkkpFEe-T4Y8RQTqW8A"/>
+</e:Document>

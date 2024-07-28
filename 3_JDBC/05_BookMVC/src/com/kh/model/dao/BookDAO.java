@@ -74,8 +74,8 @@ public class BookDAO {
 		String query = "SELECT * FROM book WHERE bk_title = ? AND bk_author = ?";
 		PreparedStatement ps = conn.prepareStatement(query);
 		
-		ps.setNString(1, title);
-		ps.setNString(2, author);
+		ps.setString(1, title);
+		ps.setString(2, author);
 		
 		ResultSet rs = ps.executeQuery();
 		boolean check = rs.next();

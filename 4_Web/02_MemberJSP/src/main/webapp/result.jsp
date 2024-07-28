@@ -1,6 +1,9 @@
-<%-- JSP Element 1) 지시어 %@ % : 컨테이너에게 알려줄 내용 지정 2) 스클릿틀릿 %
-% :자바코드는 이 안에 지정 3) 출력문 %= %: 출력하는 내용 지정 --%> <%@ page
-language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- JSP Element 
+	1) 지시어 %@ % : 컨테이너에게 알려줄 내용 지정 
+	2) 스클릿틀릿 %% :자바코드는 이 안에 지정 
+	3) 출력문 %= %: 출력하는 내용 지정 
+--%> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>

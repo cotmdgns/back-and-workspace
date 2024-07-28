@@ -39,7 +39,6 @@ public class RegisterServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		// 중복 여부 판단 후 결과 페이지 2개 -> 회원가입 성공했을떄, 실패했을 떄
 //		if(check) {
 //			// 3. 바인딩 : 결과 페이지에 서버에서 받은 값 보낼 때

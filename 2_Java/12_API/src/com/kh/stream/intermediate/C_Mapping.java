@@ -68,9 +68,9 @@ public class C_Mapping {
 	
 	public static void main(String[] args) {
 		C_Mapping c = new C_Mapping();
-//		c.method1();
+		c.method1();
 //		c.method2();
-		c.method3();
+//		c.method3();
 	}
 }
 

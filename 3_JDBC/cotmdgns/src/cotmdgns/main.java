@@ -4,8 +4,12 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 import javax.annotation.processing.SupportedSourceVersion;
 
@@ -14,24 +18,22 @@ public class main {
 		
 		main m = new main();
 		
-		int[] arr = {293, 1000, 395, 678, 94};
-		int[] delete_list = {94, 777, 104, 1000, 1, 12};
-        
-		System.out.println(Arrays.toString(m.solution(arr,delete_list)));
-	}
+		int[] arr = {444, 555, 666, 777};
+		int n = 27;
+		
+		
+		System.out.println(Arrays.toString(m.solution(arr,n)));
+//		Arrays.toString
 
-	
-	public int[] solution(int[] arr, int[] delete_list) {
-		int[] answer = {};
-        for(int i =0;i<arr.length;i++) {
-        	for(int j=0;j<delete_list.length;j++) {
-        		if(arr[i] == delete_list[j]) {
-            		System.out.println(arr[j]);
-            	}else {
-            		break;
-            	}
-        	}
-        }
+	}
+	public int[] solution(int[] arr, int n) {
+        int[] answer = arr;
+        if(answer.length % 2 == 1) 
+        	for(int i = 0;i<answer.length; i+=2) answer[i] = answer[i] + n;
+        if(answer.length % 2 == 0) 
+        	for(int i = 1;i<answer.length; i+=2) answer[i] = answer[i] + n;
         return answer;
     }
 }
+
+
