@@ -27,12 +27,6 @@ CREATE TABLE emp(
 );
 SELECT * FROM emp;
 
-CREATE TABLE qqq(
-	eme_id INT PRIMARY KEY,
-    emp_name VARCHAR(30) NOT NULL unique,
-    emp_no INT,
-);
-
 -- 1)
 INSERT INTO emp 
 VALUES (1, '윤대훈', '서비스 개발팀', default);
@@ -59,7 +53,6 @@ VALUES('윤유진');
 INSERT INTO emp(dept_title, emp_name)
 VALUES ('인사팀','유영민');
 
-SELECT * FROM emp;
 -- emp_name 컬럼에 not null 제약조건으로 인한 에러!
 INSERT INTO emp(dept_title)
 VALUES('마케팅팀');
