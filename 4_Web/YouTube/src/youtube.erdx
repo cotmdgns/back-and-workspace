@@ -69,13 +69,12 @@
   </configuration>
   <businessAreas UUID="BArea_P0VNjkpFEe-T4Y8RQTqW8A" logicalName="기본 업무영역" physicalName="DEFAULT_AREA" tables="Table_dVEflkpOEe-T4Y8RQTqW8A Table_dVFGo0pOEe-T4Y8RQTqW8A Table_dVFGt0pOEe-T4Y8RQTqW8A Table_dVFGx0pOEe-T4Y8RQTqW8A Table_dVFG3EpOEe-T4Y8RQTqW8A Table_dVFG70pOEe-T4Y8RQTqW8A Table_u1EAIEtBEe-UGZIz4VPoSQ">
     <diagrams UUID="Diagram_P0VNj0pFEe-T4Y8RQTqW8A" logicalName="다이어그램" physicalName="diagram">
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkEpOEe-T4Y8RQTqW8A" location="Point(-20.0, 17.0)" table="Table_dVEflkpOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkUpOEe-T4Y8RQTqW8A" location="Point(394.0, 27.0)" table="Table_dVFGo0pOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkkpOEe-T4Y8RQTqW8A" location="Point(170.0, 4.0)" table="Table_dVFGt0pOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfk0pOEe-T4Y8RQTqW8A" location="Point(15.0, 286.0)" table="Table_dVFGx0pOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflEpOEe-T4Y8RQTqW8A" location="Point(394.0, 326.0)" table="Table_dVFG3EpOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflUpOEe-T4Y8RQTqW8A" location="Point(196.0, 326.0)" table="Table_dVFG70pOEe-T4Y8RQTqW8A"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_u1QNYEtBEe-UGZIz4VPoSQ" location="Point(694.0, 259.0)" table="Table_u1EAIEtBEe-UGZIz4VPoSQ"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkEpOEe-T4Y8RQTqW8A" location="Point(275.0, 68.0)" table="Table_dVEflkpOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkUpOEe-T4Y8RQTqW8A" location="Point(689.0, 78.0)" table="Table_dVFGo0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfkkpOEe-T4Y8RQTqW8A" location="Point(465.0, 55.0)" table="Table_dVFGt0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEfk0pOEe-T4Y8RQTqW8A" location="Point(310.0, 337.0)" table="Table_dVFGx0pOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflEpOEe-T4Y8RQTqW8A" location="Point(689.0, 377.0)" table="Table_dVFG3EpOEe-T4Y8RQTqW8A"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_dVEflUpOEe-T4Y8RQTqW8A" location="Point(491.0, 377.0)" table="Table_dVFG70pOEe-T4Y8RQTqW8A"/>
       <viewSettings showAltTableName="false">
         <cellsToShow>name</cellsToShow>
         <cellsToShow>domain</cellsToShow>

@@ -195,20 +195,20 @@
   </configuration>
   <businessAreas UUID="BArea_Z4sUv0sREe-x2Yk2kzL71Q" logicalName="기본 업무영역" physicalName="DEFAULT_AREA" tables="Table_0NeQEUsREe-x2Yk2kzL71Q Table_spx_sEsSEe-x2Yk2kzL71Q Table_spx_wUsSEe-x2Yk2kzL71Q Table_om1qi0sZEe-x2Yk2kzL71Q Table_om1qnUsZEe-x2Yk2kzL71Q Table_om1qtEsZEe-x2Yk2kzL71Q Table_om1qtUsZEe-x2Yk2kzL71Q Table_om1qvEsZEe-x2Yk2kzL71Q Table_om1qyEsZEe-x2Yk2kzL71Q Table_om1qz0sZEe-x2Yk2kzL71Q Table_om1q20sZEe-x2Yk2kzL71Q Table_om1q60sZEe-x2Yk2kzL71Q Table_om1q9ksZEe-x2Yk2kzL71Q Table_om1rC0sZEe-x2Yk2kzL71Q Table_om1rDEsZEe-x2Yk2kzL71Q Table_om1rDUsZEe-x2Yk2kzL71Q Table_om1rDksZEe-x2Yk2kzL71Q Table_om1rD0sZEe-x2Yk2kzL71Q Table_LXuaIEsbEe-x2Yk2kzL71Q Table_LXuaIUsbEe-x2Yk2kzL71Q Table_VUwuREsfEe-x2Yk2kzL71Q Table_VUwuUEsfEe-x2Yk2kzL71Q Table_VUwuXEsfEe-x2Yk2kzL71Q Table_I3k7O0snEe-x2Yk2kzL71Q Table_ghdWcEsnEe-x2Yk2kzL71Q Table_5VQ8YEspEe-x2Yk2kzL71Q">
     <diagrams UUID="Diagram_Z4sUwEsREe-x2Yk2kzL71Q" logicalName="다이어그램" physicalName="diagram">
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_0NeQEEsREe-x2Yk2kzL71Q" location="Point(65.0, 81.0)" table="Table_0NeQEUsREe-x2Yk2kzL71Q" theme="cobaltBlue"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_spxYoEsSEe-x2Yk2kzL71Q" location="Point(688.0, 390.0)" table="Table_spx_sEsSEe-x2Yk2kzL71Q" theme="peruOpal"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_0NeQEEsREe-x2Yk2kzL71Q" location="Point(124.0, 214.0)" table="Table_0NeQEUsREe-x2Yk2kzL71Q" theme="cobaltBlue"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_spxYoEsSEe-x2Yk2kzL71Q" location="Point(671.0, 371.0)" table="Table_spx_sEsSEe-x2Yk2kzL71Q" theme="peruOpal"/>
       <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_spxYoUsSEe-x2Yk2kzL71Q" location="Point(1085.0, 290.0)" table="Table_spx_wUsSEe-x2Yk2kzL71Q" theme="coffie"/>
       <diagramEntry xsi:type="e:Note" UUID="Note_FZKDgEsTEe-x2Yk2kzL71Q" location="Point(1014.0, 77.0)" text="쿠키로 채팅방&#xD;&#xA;" backgroundColor="RGB {255, 255, 255}" baloonPoint="Point(99.0, 99.0)"/>
       <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DcUsZEe-x2Yk2kzL71Q" location="Point(1409.0, 320.0)" table="Table_om1qnUsZEe-x2Yk2kzL71Q" theme="coffie"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DcksZEe-x2Yk2kzL71Q" location="Point(1628.0, 515.0)" table="Table_om1qtUsZEe-x2Yk2kzL71Q" theme="perl"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1Dc0sZEe-x2Yk2kzL71Q" location="Point(1144.0, 515.0)" table="Table_om1qvEsZEe-x2Yk2kzL71Q" theme="perl"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DdEsZEe-x2Yk2kzL71Q" location="Point(1643.0, 679.0)" table="Table_om1qyEsZEe-x2Yk2kzL71Q" theme="perl"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DdUsZEe-x2Yk2kzL71Q" location="Point(1177.0, 669.0)" table="Table_om1qz0sZEe-x2Yk2kzL71Q" theme="perl"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DcksZEe-x2Yk2kzL71Q" location="Point(1456.0, 515.0)" table="Table_om1qtUsZEe-x2Yk2kzL71Q" theme="perl"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1Dc0sZEe-x2Yk2kzL71Q" location="Point(1055.0, 515.0)" table="Table_om1qvEsZEe-x2Yk2kzL71Q" theme="perl"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DdEsZEe-x2Yk2kzL71Q" location="Point(1471.0, 639.0)" table="Table_om1qyEsZEe-x2Yk2kzL71Q" theme="perl"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DdUsZEe-x2Yk2kzL71Q" location="Point(1088.0, 629.0)" table="Table_om1qz0sZEe-x2Yk2kzL71Q" theme="perl"/>
       <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1Dd0sZEe-x2Yk2kzL71Q" location="Point(342.0, 596.0)" table="Table_om1q60sZEe-x2Yk2kzL71Q" theme="deepSea"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DeEsZEe-x2Yk2kzL71Q" location="Point(-37.0, 456.0)" table="Table_om1q9ksZEe-x2Yk2kzL71Q" theme="forest"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEEsfEe-x2Yk2kzL71Q" location="Point(317.0, 65.0)" table="Table_VUwuREsfEe-x2Yk2kzL71Q" theme="deepSea"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEUsfEe-x2Yk2kzL71Q" location="Point(698.0, 106.0)" table="Table_VUwuUEsfEe-x2Yk2kzL71Q" theme="peruOpal"/>
-      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEksfEe-x2Yk2kzL71Q" location="Point(889.0, 715.0)" table="Table_VUwuXEsfEe-x2Yk2kzL71Q"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_om1DeEsZEe-x2Yk2kzL71Q" location="Point(8.0, 464.0)" table="Table_om1q9ksZEe-x2Yk2kzL71Q" theme="forest"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEEsfEe-x2Yk2kzL71Q" location="Point(325.0, 152.0)" table="Table_VUwuREsfEe-x2Yk2kzL71Q" theme="deepSea"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEUsfEe-x2Yk2kzL71Q" location="Point(706.0, 193.0)" table="Table_VUwuUEsfEe-x2Yk2kzL71Q" theme="peruOpal"/>
+      <diagramEntry xsi:type="e:TableDiagram" UUID="TDiagram_VUwHEksfEe-x2Yk2kzL71Q" location="Point(712.0, 688.0)" table="Table_VUwuXEsfEe-x2Yk2kzL71Q"/>
       <viewSettings showAltTableName="false">
         <cellsToShow>name</cellsToShow>
         <cellsToShow>domain</cellsToShow>
