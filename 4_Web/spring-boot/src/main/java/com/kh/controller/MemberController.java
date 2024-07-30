@@ -22,6 +22,11 @@ public class MemberController {
 
 	@Autowired
 	private MemberService service;
+
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
 	
 	@GetMapping("register")
 	public void register() {}

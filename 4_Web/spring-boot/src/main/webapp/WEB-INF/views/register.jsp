@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>로그인</h1>
-	<form action="/login" method="post">
+	<h1>회원가입</h1>
+	<form action="/register" method="post">
 		<label>아이디 : <input type="text" name="id"></label><br>
 		<label>비밀번호 : <input type="password" name="password"></label><br>
-		<input type="submit" value="확인"> 
+		<label>이름 : <input type="text" name="name"></label><br>
+	<input type="submit" value="회원가입"> 
 	</form>
 </body>
 </html>
