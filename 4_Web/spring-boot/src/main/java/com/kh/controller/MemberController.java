@@ -1,4 +1,4 @@
-package com.kh.controller;
+package src.main.java.com.kh.controller;
 
 import java.sql.SQLException;
 import java.util.List;

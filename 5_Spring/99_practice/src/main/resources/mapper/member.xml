@@ -1,7 +1,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.MemberMapper">
-	<insert id="register" parameterType="com.kh.practice.model.vo.Member">
+	<insert id="register" parameterType="Member">
 		INSERT INTO member
 		VALUES (#{id}, #{password}, #{name})
 	</insert>
+	
+	<select id="allmember" resultType="Member">
+		SELECT * FROM member
+	</select>
+	
+	<select id="login" parameterType="Member" resultType="Member">
+		SELECT* FROM member
+		WHERE id = #{id} AND password = #{password}
+	</select>
 </mapper>
