@@ -22,7 +22,7 @@ drop table location_category_small;
 -- 위치대분류 데이터 삽입
 INSERT INTO location_category_large (loc_la_name) VALUES
 ('서울특별시'),('부산광역시'),('대구광역시'),('인천광역시'),('광주광역시'),('대전광역시'),('경기도'),
-('강원도'),('충청북도'),('충청남도'),('전라북도'),('전라남도'),('경상북도'),('경상남도'),('제주도');
+('강원도'),('충청북도'),('충청남도'),('전라북도'),('전라남도'),('경상북도'),('경상남도'),('제주도'),('세종시');
 
 -- 서울특별시 소분류
 INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
@@ -117,10 +117,6 @@ INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
 ('북구', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '울산광역시')),
 ('울주군', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '울산광역시'));
 
--- 세종특별자치시 소분류
-INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
-('세종시', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '세종특별자치시'));
-
 -- 경기도 소분류
 INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
 ('수원시', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '경기도')),
@@ -195,7 +191,8 @@ INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
 ('청양군', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '충청남도')),
 ('홍성군', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '충청남도')),
 ('예산군', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '충청남도')),
-('천안시', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '충청남도'));
+('천안시', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '충청남도')),
+('세종시', (SELECT loc_la_code FROM location_category_large WHERE loc_la_name = '세종특별자치시'));
 
 -- 전라북도 소분류
 INSERT INTO location_category_small (loc_s_name, loc_la_code) VALUES
