@@ -14,8 +14,7 @@
 	<li><a href="/logout">로그아웃</a></li>
 </ul>
 	<form action="/update" method="post">
-		아이디 : <input 
-		type="text" name ="id" value="${vo.id}" readonly><br>
+		아이디 : <input type="text" name ="id" value="${vo.id}" readonly><br>
 		비밀번호 : <input type="password" name ="password" value="${vo.password}"><br>
 		이름 : <input type="text" name ="name" value="${vo.name}"><br>
 		<input type="submit" value="수정">

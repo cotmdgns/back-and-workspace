@@ -1,5 +1,5 @@
--- drop schema pro;
--- create schema pro;
+-- drop schema damoim;
+create schema damoim;
 
 CREATE TABLE sign_up ( -- 회원가입
     id VARCHAR(50) PRIMARY KEY, -- 아이디
@@ -20,7 +20,6 @@ CREATE TABLE type_category_small  ( -- 유형소분류
     type_s_code INT PRIMARY KEY auto_increment, -- 소분류코드
     type_s_name VARCHAR(50) UNIQUE, -- 소분류이름
     type_la_code INT -- 대분류코드 /외래키
-    
 );
 
 CREATE TABLE location_category_large ( -- 위치대분류
@@ -193,69 +192,12 @@ ALTER TABLE main_comment ADD  FOREIGN KEY (main_parents_comment_code) REFERENCES
 
 
 
-ALTER TABLE image ADD  FOREIGN KEY (meet_code) REFERENCES meetings(meet_code);
+ALTER TABLE image ADD  FOREIGN KEY (meet_code) REFERENCES membership_meetings(meet_code);
 ALTER TABLE image ADD  FOREIGN KEY (main_code) REFERENCES main(main_code);
 
+ALTER TABLE membership_meetings ADD list_code INT;
 
-
-
-
-
-
-
-
-
-CREATE TABLE location_category_large ( -- 위치대분류
-    loc_la_code INT PRIMARY KEY auto_increment, -- 위치대분류코드 -- 대분류코드 ml 메인지역 줄임말
-    loc_la_name VARCHAR(50) -- 위치대분류이름
-);
-CREATE TABLE location_category_small ( -- 위치소분류
-    loc_s_code INT PRIMARY KEY auto_increment, -- 위치소분류코드
-    loc_s_name VARCHAR(50), -- 위치소분류이름
-    loc_la_code INT -- 위치대분류코드 /외래키
-);
-
-
-
-SELECT * FROM location_category_large;
-SELECT * FROM location_category_small;
-
--- 위치대분류 데이터 삽입
-INSERT INTO location_category_large (loc_la_name) VALUES
-('서울특별시'),('부산광역시'),('대구광역시'),('인천광역시'),('광주광역시'),('대전광역시'),('경기도'),
-('강원도'),('충청북도'),('충청남도'),('전라북도'),('전라남도'),('경상북도'),('경상남도'),('제주도');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ALTER TABLE membership_meetings ADD  FOREIGN KEY (list_code) REFERENCES membership_user_list(list_code);
 
 
 

@@ -16,6 +16,10 @@ SELECT * FROM location_category_small;
 SELECT * FROM location_category_large
 join location_category_small using (loc_la_code);
 
+SELECT * FROM location_category_small
+WHERE loc_la_code = '1';
+
+
 drop table location_category_large;
 drop table location_category_small;
 
