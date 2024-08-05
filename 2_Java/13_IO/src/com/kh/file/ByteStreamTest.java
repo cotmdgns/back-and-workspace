@@ -3,6 +3,7 @@ package com.kh.file;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -33,7 +34,19 @@ public class ByteStreamTest {
 	 * */
 	
 	public static void main(String[] args) {
-		// 1. 먼저 기반 스트림을 생성한다.
+		// 1. 먼저 기반 스트림을 생성한다.	
+		try {
+			FileInputStream fis1 = new FileInputStream("src/bird.jgp");
+			FileOutputStream fos1 = new FileOutputStream("");
+			
+			DataInputStream dis1 = new DataInputStream(fis1);
+			DataOutputStream dos1 = new DataOutputStream(fos1);
+			
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		
 		FileInputStream fis = null;
 		FileOutputStream fos= null;

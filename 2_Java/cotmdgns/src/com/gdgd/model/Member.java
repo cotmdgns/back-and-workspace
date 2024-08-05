@@ -8,10 +8,6 @@ public class Member {
 	private String email;
 	private char gender;
 	private int age;
-	
-	/*생성자*/
-	public Member() {
-	}
 	public Member(String id, String name, String pwd, String email, char gender, int age) {
 		this.id = id;
 		this.name = name;
@@ -20,7 +16,15 @@ public class Member {
 		this.gender = gender;
 		this.age = age;
 	}
-	/*setter getter*/
+	public Member() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", name=" + name + ", pwd=" + pwd + ", email=" + email + ", gender=" + gender
+				+ ", age=" + age + "]";
+	}
 	public String getId() {
 		return id;
 	}
@@ -57,9 +61,7 @@ public class Member {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	@Override
-	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", pwd=" + pwd + ", email=" + email + ", gender=" + gender
-				+ ", age=" + age + "]";
-	}
+	
+	
+	
 }
