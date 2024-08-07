@@ -28,7 +28,6 @@ public class DBConnectionTest2 {
 			ps.setInt(1, 900); // 1번째 물음표
 			ps.setString(2, "채승훈"); //2번째
 			ps.setString(3, "970109-1111111");//3번째
-			
 			// 4. 퀴리문 실행
 			System.out.println(ps.executeUpdate() + "명 추가!"); // executeUpdate() 반환값이 int , 엽데이트
 			
