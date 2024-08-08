@@ -1,12 +1,9 @@
-drop table comment;
-drop table video_like;
-drop table video;
-drop table subscribe;
 drop table channel;
+drop table comment;
 drop table member;
-
-
-
+drop table subscribe;
+drop table video;
+drop table video_like;
 -- 회원
 CREATE TABLE member(
 	id VARCHAR(20) PRIMARY KEY,
@@ -14,7 +11,6 @@ CREATE TABLE member(
     email VARCHAR(50),
     phone VARCHAR(13)
 );
-
 -- 채널
 CREATE TABLE channel(
 	channel_code INT PRIMARY KEY AUTO_INCREMENT,
@@ -23,71 +19,64 @@ CREATE TABLE channel(
     id VARCHAR(20),
     FOREIGN KEY (id) REFERENCES member(id)
 );
-
 -- 동영상
 CREATE TABLE video(
 	video_code INT PRIMARY KEY AUTO_INCREMENT,
     video_url VARCHAR(100),
     video_img VARCHAR(100),
     video_title VARCHAR(80),
-    video_count INT,
-    video_date DATE DEFAULT (current_date),
+    video_count INT DEFAULT 0,
+    video_date DATETIME DEFAULT current_timestamp,
     video_desc TEXT,
     channel_code INT,
     FOREIGN KEY (channel_code) REFERENCES channel(channel_code)
 );
-
 -- 댓글
 CREATE TABLE comment(
 	comment_code INT PRIMARY KEY AUTO_INCREMENT,
     comment_text TEXT,
-    comment_daate DATE DEFAULT(current_date),
+    comment_date DATETIME DEFAULT current_timestamp,
     id VARCHAR(20),
-    video_code INT DEFAULT 0,
+    video_code INT,
     parent_code INT,
     FOREIGN KEY (id) REFERENCES member(id),
     FOREIGN KEY (video_code) REFERENCES video(video_code)
 );
-
 -- 구독
-CREATE TABLE subscribe(	
+CREATE TABLE subscribe(
 	sub_code INT PRIMARY KEY AUTO_INCREMENT,
     id VARCHAR(20),
     channel_code INT,
     FOREIGN KEY (id) REFERENCES member(id),
     FOREIGN KEY (channel_code) REFERENCES channel(channel_code)
 );
-
 -- 좋아요
-CREATE TABLE video_like(	
+CREATE TABLE video_like(
 	like_code INT PRIMARY KEY AUTO_INCREMENT,
     id VARCHAR(20),
-	video_code INT,
+    video_code INT,
     FOREIGN KEY (id) REFERENCES member(id),
     FOREIGN KEY (video_code) REFERENCES video(video_code)
 );
-
-
-SELECT * FROM channel;
-SELECT * FROM comment;
-SELECT * FROM member;
-SELECT * FROM subscribe;
-SELECT * FROM video;
-SELECT * FROM video_like;
-
-
-SELECT * FROM member;
-SELECT * FROM channel;
-SELECT * FROM video;
-
+select * from member;
 INSERT INTO member(id,password,email,phone)
-VALUES('akmu','1234','akmu@gmail.com','010-0000-0000');
-
-INSERT INTO channel(channel_img,channel_name,id)
-VALUES('http://192.168.10.51:8082/channel/akmu.jpg','AKMU','akmu');
-
+VALUES('akmu','1234','akmu@gmail.com','010-0000-000');
+SELECT * FROM member;
+INSERT INTO channel(channel_img, channel_name, id)
+VALUES('http://192.168.10.51:8082/channel/akmu.jpg','AKMU', 'akmu');
+INSERT INTO channel(channel_img, channel_name, id)
+VALUES('http://192.168.10.51:8082/channel/dingo.jpg','딩고 뮤직', 'akmu');
+SELECT * FROM channel;
 INSERT INTO video(video_url, video_img, video_title, video_desc, channel_code)
-VALUES('http://192.168.10.51:8082/video/AKMU1.mp4','http://192.168.10.51:8082/thumbnail/akmu.webp','AKMU - 후라이의 꿈 LIVE CLIP(FESTIVAL ver.)','More about AKMU' ,'1');
+VALUES('http://192.168.10.51:8082/video/AKMU1.mp4',
+		'http://192.168.10.51:8082/thumbnail/akmu.webp ',
+		'AKMU - 후라이의 꿈 LIVE CLIP (FESTIVAL ver.) ',
+        'More about AKMU ','1');
+INSERT INTO video(video_url, video_img, video_title, video_desc, channel_code)
+VALUES('http://192.168.10.51:8082/video/day6.mp4',
+		'http://192.168.10.51:8082/thumbnail/day6.webp ',
+		'DAY6의 킬링보이스를 라이브로! ',
+        '데이식스의 쇼에 오신걸 환영합니다 ','2');
+SELECT * FROM video JOIN channel USING(channel_code);
 
-SELECT * FROM video 
-join channel USING(channel_code);
+SELECT * FROM video WHERE video_code = 2;

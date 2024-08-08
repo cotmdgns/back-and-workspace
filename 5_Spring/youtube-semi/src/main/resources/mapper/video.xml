@@ -13,13 +13,19 @@
 			<id column="channel_code" property="channelCode"/>
 			<result column="channel_img" property="channelImg"/>
 			<result column="channel_name" property="channelName"/>
-			<result column="id" property="id"/>	
+			<result column="id" property="id"/>
 		</association>
 	</resultMap>
 
 	<select id="allVideo" resultMap="videoMap">
 		SELECT * FROM video 
-		JOIN channel USING(channel_code);
+		JOIN channel USING (channel_code)
+	</select>
+	
+	<select id="detail" parameterType="Integer" resultMap="videoMap">
+		SELECT * FROM video 
+		JOIN channel USING (channel_code)
+		WHERE video_code = #{videoCode}
 	</select>
 
 </mapper>
