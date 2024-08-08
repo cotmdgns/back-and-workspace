@@ -22,7 +22,7 @@ public class MemberController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		model.addAttribute("allmember",service.allmember());
+		model.addAttribute("allMember",service.allMember());
 		return "index";
 	}
 	
@@ -30,24 +30,23 @@ public class MemberController {
 	public String register() {
 		return "mypage/register";
 	}
-	
 	@PostMapping("/register")
-	public String register(Member vo) {
-		service.register(vo);
-		return "redirect:/";
+	public String register(Member member) {
+		service.register(member);
+		return "redirect:/";		
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("login")
 	public String login() {
 		return "mypage/login";
 	}
-	
-	@PostMapping("/login")
-	public String login(Member vo, HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		session.setAttribute("vo", service.login(vo));
+	@PostMapping("login")
+	public String login(Member member, Model model) {
+		System.out.println(member);
+		model.addAttribute("login",service.login(member));
 		return "redirect:/";
 	}
+	
 	
 	
 }

@@ -3,7 +3,7 @@
 	<insert id="register" parameterType="Member">
 		INSERT INTO member
 		VALUES (#{id}, #{password}, #{name})
-	</insert>
+	</insert> 
 	
 	<select id="allMember" resultType="Member">
 		SELECT * FROM member
