@@ -8,7 +8,9 @@ import com.kh.pratice.model.vo.Member;
 
 @Mapper
 public interface MemberMapper {
+	List<Member> allMember();
 	void register(Member member);
-	List<Member> allmember();
 	Member login(Member member);
+	
+	//<select id="login" parameterType="Member" resultType="Member">
 }

@@ -13,18 +13,17 @@ import mapper.MemberMapper;
 public class MemberService {
 	
 	@Autowired
-	private MemberMapper Mapper;
-			
-	public void register(Member member) {
-		Mapper.register(member);
+	private MemberMapper membermapper;
+	
+	public List<Member> allMember(){
+		return membermapper.allMember();
 	}
 	
-	public List<Member> allmember() {
-		return Mapper.allmember();
+	public void register(Member member) {
+		membermapper.register(member);
 	}
 	
 	public Member login(Member member) {
-		return Mapper.login(member);
+		return membermapper.login(member);
 	}
-	 
 }
