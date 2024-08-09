@@ -1,5 +1,7 @@
 package com.kh.ajax.controller;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -42,4 +44,10 @@ public class AjaxController {
 		}
 	}
 	
+	@ResponseBody
+	@PostMapping("/serial")
+	public Member register(Member member) {
+		service.register(member);
+		return member;
+	}
 }

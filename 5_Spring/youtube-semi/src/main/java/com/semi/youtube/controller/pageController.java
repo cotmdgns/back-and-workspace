@@ -26,4 +26,9 @@ public class pageController {
 		model.addAttribute("list", video.allVideo());
 		return "detail";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
 }

@@ -6,6 +6,9 @@ CREATE TABLE Member(
 DROP TABLE book;
 SELECT * FROM member;	
 
+INSERT INTO member
+value("","","");
+
 DELETE FROM member
 WHERE member_pwd = "cotmdgns";
 

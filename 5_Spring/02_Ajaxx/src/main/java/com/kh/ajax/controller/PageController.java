@@ -20,4 +20,9 @@ public class PageController {
 	public String ajax3() {
 		return "03_register";
 	}
+	
+	@GetMapping("/04_Ajaxx")
+	public String ajax4() {
+		return "04_serialize";
+	}
 }
