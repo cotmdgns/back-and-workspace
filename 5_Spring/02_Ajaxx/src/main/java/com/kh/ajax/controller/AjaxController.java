@@ -36,7 +36,6 @@ public class AjaxController {
 	@PostMapping("/check")
 	public boolean checkid(String id) {
 		Member memebr = service.idCheck(id);
-		System.out.println(id);
 		if(memebr != null || id.trim().isEmpty()) {
 			return true;
 		}else {

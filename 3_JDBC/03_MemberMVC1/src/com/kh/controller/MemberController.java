@@ -86,7 +86,7 @@ public class MemberController {
 			return true;
 		}
 		return false;
-		
+	
 		//트라이 켓치 방법
 //		try {
 //			Connection conn = connect();
@@ -126,6 +126,7 @@ public class MemberController {
 //		}
 		
 	}
+
 	public String login(String id, String password) throws SQLException {
 		
 		// 로그인 기능 구현!
@@ -141,37 +142,6 @@ public class MemberController {
 		if(rs.next()) name = rs.getString("name");
 		close(rs,ps,conn);		
 		return name;
-		
-//		try {
-//			Class.forName(serverinfo.DRIVER_NAME);
-//			Connection conn = DriverManager.getConnection(serverinfo.URL,serverinfo.USER,serverinfo.PASSWORD);
-//			
-//			//사용자가 로그인할때 입력한 아이디 비번 sql에 있나 대조하는 작업
-//			String query = "SELECT * FROM member WHERE id = ? AND password = ?";
-//			PreparedStatement ps = conn.prepareStatement(query);			
-//			ps.setString(1,id);
-//			ps.setString(2,password);
-//			
-//			// 있다면 rs에 로그인정보와 일치하는 사용자의 정보가 들어가고 없다면 아무것도 안 들어갈거임
-//			ResultSet rs = ps.executeQuery();
-//			
-//			// rs.next()는 rs를 가져와서 비어있나 뭐라도 있나확인 있다면 if문으로 들어감
-//			if(rs.next()) {
-//				// rs에 들어가있는 아이디와 비번을 가져옴
-//				String Id = rs.getString("id");
-//				String Password = rs.getString("password");
-//				
-//				
-//				// 그 입력한 로그인정보에 들어가있는 이름을 가져와서 프론트로 리턴함
-//				if(Id.equals(id) && Password.equals(password)) {
-//					return rs.getString("name");
-//				}
-//			}
-//			// 비어있으면 if문 안 거치고 바로 프론트로null발송
-//			return null;
-//		} catch (Exception e) {
-//			return null;
-//		}
 	}
 	
 	
@@ -194,6 +164,7 @@ public class MemberController {
 		
 	}
 	
+
 	public void changeName(String id, String newName) throws SQLException {
 
 		// 이름 바꾸기 기능 구현!
@@ -205,17 +176,7 @@ public class MemberController {
 		ps.setString(2, id);
 		ps.executeUpdate();
 		close(ps,conn);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 	
 }

@@ -19,7 +19,6 @@
 		아이디 있으면 ID 사용 불가, 없으면 ID 사용 가능
 		DB는 스키마 : member, 테이블 : member
 	-->
-    </style>
 	<script>
 		$("#idCheck").click(()=>{
 			$.ajax({
@@ -42,25 +41,5 @@
 			})
 		});
 	</script>	
-	
-		 <style>
-      @keyframes a {
-        0% {
-          transform: scaleY(0.3);
-          background-color: aqua;
-        }
-        50% {
-          transform: scaleY(1.5);
-          background-color: red;
-        }
-        100% {
-          transform: scaleY(0.3);
-          background-color: green;
-        }
-      }
-      .aa {
-        animation: a 1s linear infinite;
-      }
-	
 </body>
 </html>

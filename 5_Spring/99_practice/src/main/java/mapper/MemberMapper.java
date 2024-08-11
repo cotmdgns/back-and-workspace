@@ -11,6 +11,7 @@ public interface MemberMapper {
 	List<Member> allMember();
 	void register(Member member);
 	Member login(Member member);
-	
-	//<select id="login" parameterType="Member" resultType="Member">
+	void update(Member memebr);
+	void delet(List<String> idList);
+//	<delete id="delet" parameterType="ArrayList">
 }

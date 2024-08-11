@@ -1,0 +1,13 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.MemberMapper">
+
+	<select id="idCheck" parameterType="String" resultType="String">
+		SELECT * FROM member
+		where id = #{id};
+	</select>
+	
+	<insert id="register" parameterType="Member">
+		INSERT INTO member
+		value(#{id},#{password},#{name});
+	</insert>
+</mapper>

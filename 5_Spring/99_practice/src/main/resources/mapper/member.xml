@@ -15,5 +15,35 @@
 		WHERE id = #{id} AND password = #{password};
 	</select>
 	
+	<update id="update" parameterType="member">
+	UPDATE members
+	<set>
+		<if test="password != null">
+			password = #{password}
+		</if>
+		<if test="name != null">
+			name = #{name}
+		</if>
+	</set>
+	WHERE id = #{id};
+	</update>
+	
+	<delete id="delet" parameterType="ArrayList">
+		delete from member
+		WHERE id IN
+		<foreach collection="idList" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+	
+	<select id="search" parameterType="String">
+		select * from member
+		<where>
+			<if test="select == all">
+				id LIKE CONCAT ('%',#{id},'%')
+			</if>
+		</where>
+	</select>
+	
 	
 </mapper>

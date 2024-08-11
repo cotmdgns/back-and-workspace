@@ -155,12 +155,8 @@ public class Application {
 		}else {
 			System.out.println("비밀번호 변경에 실패했습니다. 다시 입력해주세요.");
 		}
-		
 		// true면 "비밀번호 변경에 성공했습니다." 출력
 		// false면 "비밀번호 변경에 실패했습니다. 다시 입력해주세요." 출력	
-		
-		
-		
 	}
 
 	public void changeName() throws SQLException {

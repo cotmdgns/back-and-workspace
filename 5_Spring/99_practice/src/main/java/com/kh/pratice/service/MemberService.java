@@ -18,12 +18,16 @@ public class MemberService {
 	public List<Member> allMember(){
 		return membermapper.allMember();
 	}
-	
 	public void register(Member member) {
 		membermapper.register(member);
 	}
-	
 	public Member login(Member member) {
 		return membermapper.login(member);
+	}
+	public void update(Member member) {
+		membermapper.update(member);
+	}
+	public void delet(List<String> idList) {
+		membermapper.delet(idList);
 	}
 }

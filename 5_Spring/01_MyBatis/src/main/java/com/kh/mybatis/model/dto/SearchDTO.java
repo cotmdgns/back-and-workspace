@@ -9,4 +9,10 @@ import lombok.Setter;
 public class SearchDTO {
 	private String keyword;
 	private String select;
+	
+	@Override
+	public String toString() {
+		return "SearchDTO [keyword=" + keyword + ", select=" + select + "]";
+	}
 }
+
