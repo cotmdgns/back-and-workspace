@@ -3,4 +3,9 @@
 	<select id="check" parameterType="String" resultType="Member">
 		SELECT * FROM member WHERE id = #{id} 
 	</select>
+	
+	<select id="login" parameterType="Member" resultType="Member">
+		SELECT * FROM member 
+		WHERE id = #{id} AND password = #{password}
+	</select>
 </mapper>
