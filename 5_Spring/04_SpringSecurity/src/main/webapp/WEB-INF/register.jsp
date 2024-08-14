@@ -12,7 +12,8 @@
 		아이디 : <input type="text" name="id"><br>
 		비밀번호 : <input type="text" name="password"><br>
 		이름 : <input type="text" name="name"><br>
-		<input type="submit" value="회원가입">
+		<input type="submit" value="회원가입" >
 	</form>
+
 </body>
 </html>
