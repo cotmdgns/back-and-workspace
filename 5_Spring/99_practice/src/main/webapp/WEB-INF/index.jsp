@@ -8,7 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<a href="/myhome">연습장으로</a>
+	<!-- 
 	<c:choose>
 	<c:when test="${empty vo}">
 		<a href="/register">회원가입</a><br>
@@ -61,6 +62,9 @@
 	</form>
 	</c:otherwise>
 	</c:choose>
+	
+	 -->
+	
 
 </body>
 </html> 

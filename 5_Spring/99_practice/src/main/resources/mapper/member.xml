@@ -46,4 +46,12 @@
 	</select>
 	
 	
+	<!-- sgin -->
+	<insert id="Sign" parameterType="sign">
+		insert into sign (id, password, name, email, date, phone, address)
+		value(#{id},#{password},#{name},#{email},#{date},#{phone},#{address});
+	</insert>
+	
+	
+	
 </mapper>
