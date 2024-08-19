@@ -1,6 +1,8 @@
 package com.semi.youtube.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,14 +35,14 @@ public class pageController {
 	// 좋아요 관련 정보 가져오기
 	// 구독자수, 구독 관련 정보 가져오기
 	@GetMapping("/{videoCode}")
-	public String detail(@PathVariable("videoCode") int videoCode,Model model,HttpServletRequest request) {
+	public String detail(@PathVariable("videoCode") int videoCode,Model model) {
 		Video data = video.detail(videoCode);
 		model.addAttribute("video", data);
 		model.addAttribute("list", video.allVideo());
 		model.addAttribute("count",video.count(data.getChannel().getChannelCode()));
 		
-		HttpSession session = request.getSession();
-		Member member = (Member) session.getAttribute("vo");
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		Member member = (Member) authentication.getPrincipal();
 		VideoLike like = null;
 		Subsrcibe sub = null;
 		if(member!=null) {
