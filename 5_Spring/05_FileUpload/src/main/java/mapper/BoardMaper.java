@@ -12,6 +12,7 @@ public interface BoardMaper {
 	
 	void insert(Board vo);
 	List<Board> selectAll(Paging paging);
+	int total();
 	Board select(int no);
 	void update(Board vo);
 	void delete(int no);
