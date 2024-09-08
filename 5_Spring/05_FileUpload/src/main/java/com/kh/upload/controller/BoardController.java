@@ -108,11 +108,7 @@ public class BoardController {
 		return "redirect:/list";
 	}
 	
-	
-	
-	
-	
-	
+
 	
 	public String fileUpload(MultipartFile file) throws IllegalStateException, IOException {
 		UUID uuid = UUID.randomUUID();
@@ -123,16 +119,7 @@ public class BoardController {
 		return fileName;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@PostMapping("/upload")
 	public String upload(MultipartFile file) throws IllegalStateException, IOException {
 		System.out.println("upload!");
