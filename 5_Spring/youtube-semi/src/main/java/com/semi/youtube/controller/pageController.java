@@ -28,12 +28,6 @@ public class pageController {
 	@Autowired
 	private VideoService video;
 	
-	
-	
-	
-	
-	
-	
 	// 비디오 전체 목록 보기
 	@GetMapping("/")
 	public String index(Model model,Paging paging){

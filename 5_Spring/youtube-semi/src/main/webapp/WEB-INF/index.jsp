@@ -91,12 +91,13 @@
 								const videoDate = meta.querySelector(".video-date");
 								videoDate.innerHTML = getTime(date);
 							});
-						});
+						}); 
 					}
-					
+					 
 				});
 			} 
 		});
 	</script>
 </body>
 </html>
+

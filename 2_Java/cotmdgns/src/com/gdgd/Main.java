@@ -13,19 +13,17 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Main m = new Main();
-		String binomial ="43 + 12";
+		int[] a = {2021, 12, 28};
+		int[] b = {2021, 12, 29};
 		
 		
-		System.out.println((m.solution(binomial)));
+		
+		System.out.println((m.solution(a,b)));
 //		Arrays.toString
 	}
-	public int solution(String binomial) {
+    public int solution(int[] date1, int[] date2) {
         int answer = 0;
-        String[] str = binomial.split(" ");
-        int number1 = Integer.parseInt(str[0]);
-        int number2 = Integer.parseInt(str[2]);
         return answer;
     }
-	
 }
 
