@@ -13,16 +13,20 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Main m = new Main();
-		int[] a = {2021, 12, 28};
-		int[] b = {2021, 12, 29};
+		int a = 3;
+		int b = 1;
+		String c = "asdasdasdasdasd";
 		
 		
 		
-		System.out.println((m.solution(a,b)));
+		System.out.println((m.solution(a,b,c)));
 //		Arrays.toString
 	}
-    public int solution(int[] date1, int[] date2) {
-        int answer = 0;
+    public String solution(int q, int r, String code) {
+        String answer = "";
+        for(int i = 0; i<code.length();i+=q) {
+        	System.out.println("몇번? : "+code.charAt(i) + i);
+        }
         return answer;
     }
 }
