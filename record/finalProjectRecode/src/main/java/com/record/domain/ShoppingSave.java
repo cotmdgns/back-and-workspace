@@ -23,6 +23,5 @@ public class ShoppingSave {
 	
 	@Column(name="user_code")
 	private int userCode;
-	
 
 }
