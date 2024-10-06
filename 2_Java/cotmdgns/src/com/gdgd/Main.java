@@ -15,18 +15,25 @@ public class Main {
 		Main m = new Main();
 		int a = 3;
 		int b = 1;
-		String c = "asdasdasdasdasd";
+		String c = "baconlettucetomato";
 		
 		
 		
-		System.out.println((m.solution(a,b,c)));
+		System.out.println((m.solution(c)));
 //		Arrays.toString
 	}
-    public String solution(int q, int r, String code) {
-        String answer = "";
-        for(int i = 0; i<code.length();i+=q) {
-        	System.out.println("몇번? : "+code.charAt(i) + i);
-        }
+    public String[] solution(String myStr) {
+        String[] answer = {};
+        
+        for(int i=0;i<myStr.length();i++) {
+        	if(myStr.charAt(i) == 'a') {
+        		answer = myStr.split("a");
+        		
+        	}
+        }        
+        
+        System.out.println(Arrays.toString(answer));
+        
         return answer;
     }
 }
