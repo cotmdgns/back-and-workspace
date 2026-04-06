@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map.dtd">
+<sqlMap namespace="User">
+    <insert id="insertTest" parameterClass="model.UserVo"> 
+        INSERT INTO mem (id, pwd) 
+        VALUES (#id#, #pwd#)
+    </insert>
+        
+    <select id="getUserList" resultClass="model.UserVo">
+        SELECT * FROM mem
+    </select>
+</sqlMap>

@@ -49,7 +49,7 @@ public class Hello { // 클래스명은 클래스 파일명과 동일해야 한�
 	public static void main(String[] args) {
 		
 		System.out.println("Hello, Java !"); // Ctrl + F11
-		
+
 	}
 	/*
 	 * 네이밍 규칙

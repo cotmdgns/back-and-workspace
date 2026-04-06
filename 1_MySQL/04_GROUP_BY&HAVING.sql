@@ -19,6 +19,7 @@ SELECT emp_name,job_code, count(*)
 FROM employee
 GROUP BY emp_name,job_code;
 
+
 -- 성별(남자/여자) 별 사원수 조회
 SELECT if(substr(emp_no,8,1) =1, '남자','여자')성별, count(*)"사원수"
 FROM employee

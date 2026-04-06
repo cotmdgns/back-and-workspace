@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">    
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+    <bean name="/home.do" class="HomeController" />
+</beans> -->
+
+
+<!-- 빨간 줄 뜨는 이유 (원인) -->
+<!-- 이클립스는 저 XML 파일 상단에 적힌 주소(http://www.springframework.org/.../spring-beans.xsd)를 보고, "인터넷에 접속해서 스프링 설정 규칙이 적힌 문서를 읽어와야지!"라고 시도합니다.
+그런데 지금 이클립스가 그 인터넷 주소에 접속을 못 하거나, 스프링 서버가 응답을 안 할 때 "규칙 문서를 못 읽어오겠어!"라며 빨간 줄을 띄우는 겁니다. -->
+
+<!-- 왜 괜찮은가요? (실행 원리) -->
+<!-- 우리가 WEB-INF/lib 폴더에 이미 spring-beans-2.5.6.jar 파일을 넣어놨죠? 그 JAR 파일 안에는 이미 똑같은 내용의 .xsd 규칙 문서가 들어있습니다.
+나중에 서버(톰캣)를 켜면, 스프링은 인터넷에 연결되지 않아도 내부 라이브러리에 있는 문서를 보고 설정을 읽어내기 때문에 실제 작동은 아주 잘 됩니다. -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context 
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 패키지 경로지정 -->
+    <!-- <context:component-scan base-package="controller.controller" /> -->
+    <context:annotation-config />
+
+    <context:component-scan base-package="controller" />
+    <context:component-scan base-package="service" />
+<!-- 	bean : 스프링에서 객체를 하나 만들겠다는 선언
+	InternalResourceViewResolver : 나중에 자바 코드에서 "home"이라고만 리턴해도, 스프링이 앞뒤에 붙여서 /WEB-INF/jsp/home.jsp로 자동으로 찾아가게 해주는 도구
+	ex> name="/home.do" : 사용자가 브라우저 주소창에 이 주소를 입력하면
+	ex> class="HomeController"라는 자바 파일을 실행하겠다는 매핑 설정 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+</beans>

@@ -36,6 +36,7 @@
 	 -->
 
 	<script>
+	
 		$("#btn").click(() => {
 			const nickname = $("#nick").val();
 			$.ajax({

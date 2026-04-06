@@ -1,5 +1,6 @@
 package com.kh.step3;
 
+import com.kh.step2.model.Card;
 import com.kh.step3.model.Calculator;
 
 public class Application {

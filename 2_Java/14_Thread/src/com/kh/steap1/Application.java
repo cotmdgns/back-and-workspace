@@ -1,4 +1,4 @@
-package com.kh.steap1;
+	package com.kh.steap1;
 
 /*
  * * 프로세스 (공장)
@@ -44,6 +44,7 @@ public class Application {
 		// 2. start를 호출
 		go.start();
 		come.start();
+		
 		
 	}
 
